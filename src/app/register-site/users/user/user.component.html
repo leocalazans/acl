@@ -1,0 +1,84 @@
+
+
+<div class="default-container"[hidden]="submitted">
+    <mat-card class="register-card">
+    <form (ngSubmit)="onSubmit()">
+    <div  class="content-Login">
+        <h2>
+            {{"Register" | translate}}
+        </h2>
+        <div class="login-content__form">
+            <mat-form-field appearance="legacy">
+                <mat-label>{{"Full Name" | translate}}</mat-label>
+                <input matInput placeholder="EX.: john vicent"  [(ngModel)]="usersite.fullName" name="name">
+            </mat-form-field>
+        </div>
+        <div class="login-content__form">
+            <mat-form-field appearance="legacy">
+                <mat-label>{{"Username" | translate}}</mat-label>
+                <input matInput placeholder="EX.: jon_vi" [(ngModel)]="usersite.userName" name="username" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+        </div>
+        
+        <div class="login-content__form">
+            <mat-form-field appearance="legacy">
+                <mat-label>{{"Email" | translate}}</mat-label>
+                <input matInput placeholder="email" [(ngModel)]="email" [(ngModel)]="usersite.Email" name="email" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+        </div>
+        <div class="login-content__form">
+            <mat-form-field>
+                <mat-label>{{"Password" | translate}}</mat-label>
+                <input matInput placeholder="Enter your password"  [type]="hide ? 'text' : 'password'"  [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon class="icon_2x">{{hide ? 'visibility' : 'visibility_off '}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+
+        <div class="login-content__form">
+            <mat-form-field>
+                <mat-label>{{"Re-type Password" | translate}}</mat-label>
+                <input matInput placeholder="Enter your password"  [type]="hide ? 'text' : 'password'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon class="icon_2x">{{hide ? 'visibility' : 'visibility_off '}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div class="login-content__form flex-dist">
+            <div class="m-t-10">
+                <mat-label><span>{{"Gender ?" | translate}}</span></mat-label><br>
+                <mat-radio-group attr.aria-label="{{'Select an option' | translate}}"
+                 [(ngModel)]="usersite.gender" name="gender" [ngModelOptions]="{standalone: true}">
+                    
+                    <mat-radio-button *ngFor="let season of seasons" [value]="season">
+                        {{season}}
+                    </mat-radio-button>
+
+                </mat-radio-group>
+
+            </div>
+        </div>
+        <br>
+        <div class="login-content__form flex-dist">
+           <div class="error__login_content">
+               <p class="content__error">
+                {{error}}
+               </p>
+           </div>
+        </div>
+        <br>
+        
+        
+        <div class="login-content__form ">
+            
+            
+            <!-- <button mat-button class="border-gray" (click)="signUp()" color="primary" routerLink="/register" routerLinkActive="active">SING UP HERE</button> -->
+            <!-- <button mat-flat-button  color="primary"  (click)="signUp()" routerLink="/login" routerLinkActive="active">REGISTER </button> -->
+            <button mat-flat-button  color="primary"  (click)="signUp()" >REGISTER </button>
+        </div>
+    </div>
+    </form>
+    </mat-card>
+
+</div>

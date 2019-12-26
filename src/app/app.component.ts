@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from '../shared/authentication.service';
+import { TranslateService } from '@ngx-translate/core';  
 
 
 @Component({
@@ -9,24 +9,29 @@ import { AuthenticationService } from '../shared/authentication.service';
 })
 
 export class AppComponent {
-  title = 'acl';
-  email: string;
-  password: string;
+  title = 'ASL';
 
-  constructor(public authenticationService: AuthenticationService) {}
+  constructor(  
+    public translate: TranslateService) {  
+    translate.addLangs(['en_US', 'pt_BR']);  
+    if (localStorage.getItem('locale')) {  
+      const browserLang = localStorage.getItem('locale');  
+      translate.use(browserLang.match(/en_US|pt_BR/) ? browserLang : 'en_US');  
+    } else {  
+      let userLang = navigator.language ;
+      userLang = userLang.replace("-", "_");
+      (userLang == "pt_PT ")? "pt_BR" : userLang;
+      localStorage.setItem('locale', 'en_US');  
+      translate.setDefaultLang(userLang);  
+    }  
+  }  
+  changeLang(language: string) {  
+    
+    localStorage.setItem('locale', language);  
+    this.translate.use(language);  
+  }  
 
-  signUp() {
-    this.authenticationService.SignUp(this.email, this.password);
-    this.email = ''; 
-    this.password = '';
+  ngOnInit() {
+
   }
-
-  signIn() {
-    this.authenticationService.SignIn(this.email, this.password);
-  }
-
-  signOut() {
-    this.authenticationService.SignOut();
-  }
-
 }

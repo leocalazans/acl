@@ -1,0 +1,71 @@
+$base-color: #04df26;
+.login-content__form{
+    width: 100%;
+
+    padding: 0px 32px;
+    box-sizing: border-box;
+}
+.mat-form-field {
+    width: 100%;
+}
+.flex-dist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.mat-hint{
+    color: $base-color;
+}
+.border-gray{
+    border: solid 1px rgba(144, 144, 144, 1);
+}
+.mat-icon-button {
+    color: $base-color;
+}
+
+.mat-radio-button{
+    margin-right:15px;
+}
+.m-t-10{
+    margin-top: 15px;
+}
+.m-t-10 span{
+    font-weight: 500;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+.default-container form{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-Login{
+    width:100%;
+    height: auto;
+    padding: 15px 0px;
+    & h2{
+        padding: 15px 52px;
+        color: $base-color;
+    }
+}
+.register-card{
+    margin-top: 50px;
+}
+.content__error{
+    color:red;
+    text-transform: capitalize;
+    max-width: 100%;
+    height: auto;
+}
+@media(min-width: 1224px){
+    // .content-Login{
+        // width:67%;
+    // }
+    .register-card{
+        margin-top: 50px;
+    }
+    .default-container form{
+        padding: 40px 0;
+    }
+}

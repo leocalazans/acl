@@ -1,0 +1,29 @@
+<div class="card mt-2" >
+    <div class="card-body">
+      <h5 class="card-title">nome</h5>
+      <p class="card-text">teste</p>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-default" (click)="edit(match, match.key)">Editar</button>
+      <button type="button" class="btn btn-danger ml-2" (click)="delete(match.key)">Excluir</button>
+    </div>
+  </div>
+
+  <table class="table-hover">
+    <thead>
+      <th>
+        championship
+      </th>
+      <th>
+        state
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let match of matchs | async">
+        <td>{{match.championship}}</td>
+        <td>[(ngModel)]="match.state"</td>
+        <td>{{match.state}}</td>
+        <td>[(ngModel)]="match.championship"</td>
+      </tr>
+    </tbody>
+  </table>

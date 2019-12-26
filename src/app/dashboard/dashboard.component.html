@@ -1,0 +1,46 @@
+
+<div *ngIf="authenticationService.userData | async" class="default-container"[hidden]="submitted">
+
+  <mat-card >   
+    <div class="hellow__card">
+      <h1 >Hellow {{ (authenticationService.userData | async)?.email }}</h1>
+      <br>
+      <button mat-button class="border-gray" color="primary" (click)="signOut()" *ngIf="authenticationService.userData | async">Logout</button>
+
+    </div> 
+  </mat-card>
+
+  <mat-card >   
+    <div class="hellow__card">
+      <mat-card-title>
+        Semi Final  <small style="color:gray">14:55</small>
+      </mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content >
+        <div class="content__img">
+          <img alt="" draggable="false" src="https://static.www.nfl.com/image/private/league/am8dsjyfmdsiwxq5xl2a" class="img_icon">
+          <h4>
+            Raiders
+          </h4>
+        </div>
+        <p>
+           3  <b>8</b> 4
+        </p>
+      </mat-card-content>
+      <mat-card-content>
+        <div class="content__img">
+          <img class="img_icon" alt="" draggable="false" src="https://static.www.nfl.com/image/private/league/bpx88i8nw4nnabuq0oob">
+          <h4>
+            Texans
+          </h4>
+        </div>
+        <p>
+          3 <b>10</b> 4
+         </p>
+      </mat-card-content>
+      <br>
+
+    </div> 
+  </mat-card>
+
+</div>

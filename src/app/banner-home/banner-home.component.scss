@@ -1,0 +1,10 @@
+.default-container{
+    justify-content: center;
+}
+.content__banner-home{
+    width: 100%;
+    & img{
+        max-width: 100%;
+        height: auto;
+    }
+}
