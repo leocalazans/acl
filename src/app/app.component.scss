@@ -1,5 +1,6 @@
 .content-sidenav-content{
-    height: 100vh;
+    // min-height: 100vh;
+    height: auto;
 }
 .mat-drawer.mat-drawer-side {
     min-width:100vw;
@@ -14,4 +15,23 @@
 .mat-drawer-container{
     background: #fbfbfb!important;
 
+}
+.content-sidenav-content{
+    height: 90vh;
+    overflow-y: scroll;
+}
+.mat-drawer-content{
+overflow: hidden;
+}
+.footer__language{
+    margin-bottom: 12vh;
+}
+@media(min-width:620px){
+    .footer__language{
+        margin-bottom: 5px;
+    }
+    .content-sidenav-content{
+        height: auto;
+        overflow-y: inherit;
+    }
 }

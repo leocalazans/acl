@@ -107,6 +107,8 @@ import { ScoreComponent } from './score/score.component';
 import { PartnershipComponent } from './register-site/partnership/partnership/partnership.component';
 import { PlayersRegisterComponent } from './register-site/players/players/players.component';
 import { UserRegisterComponent } from './register-site/users/user/user.component';
+import { NavFooterComponent } from './footer/nav-footer.component';
+// import { GooglePlacesComponent } from './register-site/players/google-plaes';
 export const createTranslateLoader = (http:HttpClient) =>{
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }; 
@@ -130,7 +132,9 @@ export const createTranslateLoader = (http:HttpClient) =>{
     ScoreComponent,
     PartnershipComponent,
     PlayersRegisterComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    NavFooterComponent,
+    // GooglePlacesComponent
     
   ],
   imports: [

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthenticationService} from '../../../../shared/authentication.service'
+import {AuthenticationService} from './shared/authentication.service'
 import { RegisterService } from './user.service';
 import { Usersite } from './usersite';
 import {TranslateService} from '@ngx-translate/core';
-import {FormBuilder,FormControl,FormGroup, Validators, } from '@angular/forms';
+import {FormBuilder,FormControl,FormGroup,FormGroupDirective, NgForm, Validators, } from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
+import { Router } from '@angular/router';
 
 
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
@@ -13,6 +15,22 @@ import {MatDatepicker} from '@angular/material/datepicker';
 import * as _moment from 'moment';
 import {default as _rollupMoment, Moment} from 'moment';
 const moment = _rollupMoment || _moment;
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
+
+export class InputErrorStateMatcherExample {
+  // emailFormControl = new FormControl('', [
+  //   Validators.required,
+  //   Validators.email,
+  // ]);
+
+  // matcher = new MyErrorStateMatcher();
+}
 
 export const MY_FORMATS = {
   parse: {
@@ -66,7 +84,6 @@ export interface shirt {
   ],
 })
 
-
 export class PlayersRegisterComponent implements OnInit {
   
   email: string;
@@ -74,11 +91,13 @@ export class PlayersRegisterComponent implements OnInit {
   isLinear = true;
   // firstFormGroup: FormGroup;
   // secondFormGroup: FormGroup;
-  
-
+  userpass: string;
+  EnableInput: boolean= true;
+  error: string;
   
   constructor(public authenticationService: AuthenticationService, 
     private RegisterService: RegisterService,
+    private router:Router,
     private translate: TranslateService,
     private _formBuilder: FormBuilder )
     {
@@ -96,19 +115,31 @@ export class PlayersRegisterComponent implements OnInit {
      );
     }
     
+    // signUp() {
+
+    //   this.authenticationService.SignUp(this.email, this.password);
+    //   this.submitted = true;
+    //   this.save();
+      
+    //   this.email = ''; 
+    //   this.password = '';
+    // }
     signUp() {
       this.authenticationService.SignUp(this.email, this.password);
-      this.submitted = true;
-      this.save();
-      
-      this.email = ''; 
-      this.password = '';
+        let HasSingUp = setInterval(() => {
+          if (sessionStorage.getItem('SingUpError')) {
+            this.error = sessionStorage.getItem('SingUpError');
+            clearInterval(HasSingUp);
+          }
+          if (sessionStorage.getItem('SingUpSucess')) {
+            this.router.navigate(['/dashboard']);
+            this.save();
+            clearInterval(HasSingUp);
+          }
+        }, 50);
     }
-    
     // favoriteSeason: string;
     seasons: string[] = ['Female', 'Male'];
-    
-    
     
     usersite: Usersite = new Usersite();
     submitted = false;
@@ -123,38 +154,73 @@ export class PlayersRegisterComponent implements OnInit {
       this.usersite = new Usersite();
     }
     
-    // onSubmit() {
-    
-    // }
+    emailFormControl = new FormControl('', [
+      Validators.required,
+      Validators.email,
+    ]);
+
+    saverange(event: string) {
+      if (event.length >= 6) {
+        this.EnableInput = false
+      }
+      if (event.length <= 6) {
+        this.EnableInput = true
+
+      }
+    }
+
+    saveArea(event){
+      console.log(event.value);
+      this.usersite.PhoneNumberArea = event.value;
+    }
+
+    saveCountry(event){
+      console.log(event.value);
+      this.usersite.country = event.value;
+    }
+    saveState(event){
+      console.log(event.value);
+      this.usersite.state = event.value;
+    }
+    saveCity(event){
+      console.log(event.value);
+      this.usersite.city = event.value;
+    }
+    saveShirtSize(event){
+      console.log(event.value);
+      this.usersite.t_shit_size = event.value;
+    }
+
+    matcher = new MyErrorStateMatcher();
     ngOnInit() {
-      // this.firstFormGroup = this._formBuilder.group({
-      //   username: ['', Validators.required]
-      // });
-      // this.secondFormGroup = this._formBuilder.group({
-      //   secondCtrl: ['', Validators.required]
-      // });
+
 
     }
+
     countries: country[] = [
       {value: 'city 1', viewValue: 'city 2'},
       {value: 'city 2', viewValue: 'city 2'},
       {value: 'city 3', viewValue: 'city '}
     ];
+
     areas: area[] = [
       {value: 'steak-0', viewValue: 'Steak'},
       {value: 'pizza-1', viewValue: 'Pizza'},
       {value: 'tacos-2', viewValue: 'Tacos'}
     ];
+
     states: state[] = [
       {value: 'sp', viewValue: 'São Paulo'},
       {value: 'rj', viewValue: 'Rio de Janeiro'},
       {value: 'mj', viewValue: 'Minas Gerais'}
     ];
+
     citis: city[] = [
       {value: 'sp', viewValue: 'Mogi'},
       {value: 'rj', viewValue: 'Arujá'},
       {value: 'mj', viewValue: 'São Paulo'}
     ];
+
     shirts: shirt[] = [
       {value: 'P', viewValue: 'P'},
       {value: 'M', viewValue: 'M'},

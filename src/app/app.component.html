@@ -31,28 +31,7 @@
 
 </style>
 
-<!-- Toolbar -->
-
-
-<div class="content" role="main">
-
-  <!-- Highlight Card -->
-  <div class="card highlight-card card-small">
-
-   
-
-
-    
-
-
-  </div>
-
-  <!-- Terminal -->
- 
-  <!-- Footer -->
-</div>
-
-<mat-drawer-container class="content-container" autosize>
+<mat-drawer-container class="content-container " >
   <mat-drawer #drawer class="js_drawer content-sidenav" mode="side">
     <button class="btnMenu" mat-button (click)="drawer.toggle()">
       <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>
@@ -173,7 +152,8 @@
     </a>
 
     <mat-list (click)="drawer.toggle()" class="lisTmenu">
-      <mat-list-item> <a mat-raised-button routerLink="/login"	routerLinkActive="active">Login</a></mat-list-item>
+      <mat-list-item  *ngIf="!(authenticationService.userData | async)" > <a mat-raised-button routerLink="/login"	routerLinkActive="active">Login</a></mat-list-item>
+      <mat-list-item  *ngIf="(authenticationService.userData | async)" > <a mat-raised-button routerLink="/dashboard"	routerLinkActive="active">dashboard</a></mat-list-item>
       <mat-list-item> <a mat-button>Salt</a></mat-list-item>
       <mat-list-item> <a mat-button>Paprika</a></mat-list-item>
      </mat-list>
@@ -189,16 +169,20 @@
     <!-- <app-list></app-list> -->
     <!-- <app-login-site></app-login-site> -->
     <!-- <app-match-list></app-match-list> -->
+    <footer class="footer__language">
+      <div class="bg-dark" style="text-align:center;color: #fff">  
+        <select #langSelect (change)="changeLang(langSelect.value)">  
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>  
+        </select>  
+      </div>  
+        
+  
+    </footer>
   </div>
-  <footer>
-    <div class="bg-dark" style="text-align:center;color: #fff">  
-      <select #langSelect (change)="changeLang(langSelect.value)">  
-          <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>  
-      </select>  
-    </div>  
-      
 
-  </footer>
+  <div>
+    <app-nav-footer></app-nav-footer>
+  </div>
 </mat-drawer-container>
 
 

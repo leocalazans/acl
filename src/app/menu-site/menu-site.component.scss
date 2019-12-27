@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     width: calc(100% + 160px);
+    width: 100%;
     padding: 0px 80px;
     height: 50px;
     margin-top: 5px;
@@ -49,17 +50,20 @@
         height:100%;
         display: flex;
         font-size: 1em;
+        align-items: center                                                                                        ;
         a{
             font-size: 0.55em;
             text-decoration: none;
             color: #43da2e;
             margin-right: 10px;
+            padding: 5px  10px;
         }
         .login_content_btn{
             font-size: 0.80em;
             background-color: #43da2e;
             border-radius: 5px;
             height: 30px;
+            padding: 0px  10px;
             .mat-icon{
                 margin-top: 10px;
                 font-size: 1.8em;
@@ -72,10 +76,12 @@
             }
         }
         .divider{
-            height: 30px;
+            min-height: 30px;
             margin-right: 10px;
             width: 1px;
             background-color: #9a9a9a;
+            display: inline-block;
+            position: relative;
         }
     }
 }
@@ -109,6 +115,22 @@
         font-size: 20px;
     }
 }
+#s_header__menu{
+    min-width: 1px;
+    width: 1px;
+    padding: 0px ;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    &.open{
+        min-width: 290px;
+        padding: 0px 10px;
+        opacity: 3;
+        transition: all 0.3s ease-out;
+    }
+}
+#l_for_s_h__menu{
+    cursor: pointer;
+}
 //  
 @media(max-width:767px){
     .menuToolbal.lg{
@@ -117,6 +139,11 @@
     .menuToolbal{
         display: flex;
         justify-content: space-between;
+        &.xs{
+            .mat-button{
+                text-transform: uppercase;
+            }
+        }
     }
 }
 

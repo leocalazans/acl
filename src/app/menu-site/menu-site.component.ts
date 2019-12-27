@@ -7,10 +7,25 @@ import { DeviceDetectorService } from 'ngx-device-detector';
   templateUrl: './menu-site.component.html',
   styleUrls: ['./menu-site.component.scss']
 })
+
+// const controllerSearch = false;
+
 export class MenuSiteComponent implements OnInit {
 
   constructor(){}
 
+  // s_header__menu
+  // l_for_s_h__menu
+  myFunc(){
+    let searchBtn = document.querySelector('#s_header__menu');
+
+    if(searchBtn.classList.contains('open')){
+        searchBtn.classList.remove('open');
+    }else{
+      searchBtn.classList.add('open');
+    }
+    
+  }
 
   ngOnInit() {
    let test =  window.innerWidth;

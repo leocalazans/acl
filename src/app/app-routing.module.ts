@@ -24,6 +24,9 @@ const routes: Routes = [
   // register
   { path: 'register/user',    component: UserRegisterComponent, },
   { path: 'register/player',    component: PlayersRegisterComponent, },
+    // { path: 'register/player',    
+  //   loadChildren: ()=> import('./register-site/players/players/players.component').then(c => c.PlayersRegisterComponent)
+  // },
   
   { path: 'customers', component: CustomersListComponent },
   { path: 'customers/add', component: CreateCustomerComponent },

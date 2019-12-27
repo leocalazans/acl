@@ -20,7 +20,8 @@
     "Shoes clothes": "Sapatos com roupas",
     "Table": "Tabela",
     "Miscellaneous": "Diversos",
-    "Team Up": "Entras",
+    "Team Up": "Entrar",
+    "enter": "Entrar",
     "ASL SHOP": "ASL SHOP",
     "Where we are?": "Onde estamos?",
     "Shop": "Loja",
@@ -41,6 +42,7 @@
     "Select an option" : "Selecione uma opção",
     "Female" : "Feminino",
     "Male" : "Masculino",
-    "Player Register " : "Masculino"
+    "Player Register " : "Registro de Jogador",
+    "Basic " : "Básico"
 
 } 

@@ -167,16 +167,12 @@
             <button mat-menu-item>{{"Table clothes" | translate}} </button>
             <button mat-menu-item>{{"Miscellaneous" | translate}}</button>
         </mat-menu>
-
-
-
-
     </div>
     <div class="sub__menu">
         <div class="default-container">
             <div class="content__search">
-                <input  placeholder="What are you looking for?">
-                <div class="content__icon">
+                <input  placeholder="What are you looking for?" id="s_header__menu">
+                <div class="content__icon" id="l_for_s_h__menu" (click)="myFunc()">
                     <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
                 </div>
 
@@ -193,7 +189,7 @@
     </div>
 </mat-toolbar>
 
-<mat-toolbar color="primary" class="menuToolbal ">
+<mat-toolbar color="primary" class="menuToolbal xs">
     
     <a mat-button [matMenuTriggerFor]="aboveMenu" routerLink="/" routerLinkActive="active">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
