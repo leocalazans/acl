@@ -198,9 +198,9 @@ export class PlayersRegisterComponent implements OnInit {
     }
 
     countries: country[] = [
-      {value: 'city 1', viewValue: 'city 2'},
-      {value: 'city 2', viewValue: 'city 2'},
-      {value: 'city 3', viewValue: 'city '}
+      {value: 'U.S.A', viewValue: 'United States'},
+      {value: 'Br', viewValue: 'Brasil'},
+      {value: 'Ag', viewValue: 'Argentine '}
     ];
 
     areas: area[] = [

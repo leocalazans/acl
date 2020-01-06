@@ -1,22 +1,23 @@
+
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Customer } from './customer';
+import { Usersite } from './usersite';
  
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerService {
+export class RegisterService {
  
   private dbPath = '/users';
  
-  customersRef: AngularFirestoreCollection<Customer> = null;
+  customersRef: AngularFirestoreCollection<Usersite> = null;
  
   constructor(private db: AngularFirestore) {
     this.customersRef = db.collection(this.dbPath);
   }
  
-  createCustomer(customer: Customer): void {
-    this.customersRef.add({...customer});
+  createCustomer(Usersite: Usersite): void {
+    this.customersRef.add({...Usersite});
   }
  
   updateCustomer(key: string, value: any): Promise<void> {
@@ -27,19 +28,9 @@ export class CustomerService {
     return this.customersRef.doc(key).delete();
   }
  
-  getCustomersList(): AngularFirestoreCollection<Customer> {
+  getCustomersList(): AngularFirestoreCollection<Usersite> {
     return this.customersRef;
   }
  
-  deleteAll() {
-    this.customersRef.get().subscribe(
-      querySnapshot => {
-        querySnapshot.forEach((doc) => {
-          doc.ref.delete();
-        });
-      },
-      error => {
-        console.log('Error: ', error);
-      });
-  }
+ 
 }

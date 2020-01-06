@@ -10,6 +10,10 @@ import { matchService } from '../match/shared/match.service';
 import { matchDataService } from '../match/shared/match-data.service';
 // import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {AuthenticationService} from './shared/authentication.service'
+
+import { RegisterService } from './user.service';
+import { Usersite } from './usersite';
 
 @Component({
   selector: 'app-register-siteteste-site',

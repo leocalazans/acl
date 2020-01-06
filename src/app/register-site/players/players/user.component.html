@@ -1,7 +1,6 @@
 
 
 <div class="default-container"[hidden]="submitted">
-  <form >
     <div  class="content-Login">
       
       <!-- <div class="login-content__form">
@@ -141,7 +140,7 @@
       <h3>{{"Insert here you personal details" | translate}} </h3>
       <form >
         <mat-card >
-          <ng-template matStepLabel>{{"Details" | translate}}</ng-template>
+          <ng-template  matStepLabel> {{"Details" | translate}}</ng-template>
           <div class="d-flex">
             <mat-form-field class="w-8  m-r-10">
               <input matInput placeholder="Phone Number" [(ngModel)]="usersite.PhoneNumber" [ngModelOptions]="{standalone: true}" required>
@@ -267,5 +266,4 @@
   <button mat-flat-button  color="primary"  (click)="signUp()" routerLink="/login" routerLinkActive="active">REGISTER </button>
 </div> -->
 </div>
-</form>
 </div>

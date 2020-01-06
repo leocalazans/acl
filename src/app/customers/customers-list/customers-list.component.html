@@ -4,7 +4,7 @@
     <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
   </nav>
 <h1>Customers</h1>
-<div *ngFor="let customer of customers" style="width: 300px;">
+<div *ngFor="let customer of customers" style=" margin: 0 auto;width: 500px;">
   <app-customer-details [customer]='customer'></app-customer-details>
 </div>
 <div style="margin-top:20px;">
