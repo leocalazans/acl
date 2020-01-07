@@ -2,26 +2,21 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { PlayerService } from '../player.service';
+import { map } from 'rxjs/operators';
 
 export interface UserData {
-  pos: string;
-  name: string;
-  progress: string;
-  L: string;
-  color: string;
+  key: string;
+  Email: string;
+  userName: string;
+  points: number;
+  fullName: string;
+  country: string;
+  lost: number;
+  won: number;
+  Position: number;
+  permision: number;
 }
-
-/** Constants used to fill up our data base. */
-const COLORS: string[] = [
-  'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
-  'aqua', 'blue', 'navy', 'black', 'gray'
-];
-
-const NAMES: string[] = [
-  'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
-  'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
-];
-
 
 @Component({
   selector: 'app-table-result',
@@ -30,26 +25,44 @@ const NAMES: string[] = [
 })
 
 export class TableResultComponent implements OnInit {
-  displayedColumns: string[] = ['pos', 'name', 'progress','color','L'];
-  dataSource: MatTableDataSource<UserData>;
+  displayedColumns: string[] = ['Position', 'userName', 'won', 'lost','points'];
+  dataSource:MatTableDataSource<UserData>;
+  players: any;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor() {
+  constructor(private playerService: PlayerService) {
     // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+    // const players = getCustomersList();
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+    this.dataSource = new MatTableDataSource(this.players);
   }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getCustomersList();
+  }
+
+  getCustomersList() {
+    this.playerService.getPlayersList().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(players => {
+      this.players = players;
+      console.log(this.players);
+      this.dataSource = new MatTableDataSource(this.players);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+
+    });
   }
 
   applyFilter(filterValue: string) {
+    
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
     if (this.dataSource.paginator) {
@@ -58,16 +71,3 @@ export class TableResultComponent implements OnInit {
   }
 }
 
-/** Builds and returns a new User. */
-function createNewUser(pos: number): UserData {
-  const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-  return {
-    pos: pos.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    L: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-  };
-}

@@ -10,6 +10,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .m-t60{
     margin-top: 60px;
 }
+.mat-cell.text-med-color, .mat-footer-cell.text-med-color{
+    color:$text-med-color;
+}
+.mat-cell.text-dark-color, .mat-footer-cell.text-dark-color{
+    color:$text-dark-color;
+}
+.mat-cell.text-light-color, .mat-footer-cell.text-light-color{
+    color:$text-light-color;
+}
+
 .mat-toolbar.mat-primary{
     background: $base-color;
 }

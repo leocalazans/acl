@@ -198,15 +198,18 @@ export class PlayersRegisterComponent implements OnInit {
     }
 
     countries: country[] = [
-      {value: 'U.S.A', viewValue: 'United States'},
-      {value: 'Br', viewValue: 'Brasil'},
-      {value: 'Ag', viewValue: 'Argentine '}
+      {value: 'UNITED_STATES', viewValue: 'United States'},
+      {value: 'BRAZIL', viewValue: 'Brasil'},
+      {value: 'ARGENTINA', viewValue: 'Argentine '},
+      {value: 'CANADA', viewValue: 'Canada '},
+      {value: 'GERMANY', viewValue: 'Germany '},
+      {value: 'UNITED_KINGDON', viewValue: 'United Kingdon '}
     ];
 
     areas: area[] = [
-      {value: 'steak-0', viewValue: 'Steak'},
-      {value: 'pizza-1', viewValue: 'Pizza'},
-      {value: 'tacos-2', viewValue: 'Tacos'}
+      {value: '11', viewValue: '11'},
+      {value: '12', viewValue: '12'},
+      {value: '13', viewValue: '13'}
     ];
 
     states: state[] = [

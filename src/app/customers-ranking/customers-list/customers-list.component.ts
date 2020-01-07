@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from '../customer.service';
+import { CustomerRankingService } from '../customer.service';
 import { map } from 'rxjs/operators';
  
 @Component({
@@ -8,18 +8,17 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./customers-list.component.scss']
 })
 export class CustomersListComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'userName', 'won', 'lost','points'];
-  dataSource;
+ 
   customers: any;
  
-  constructor(private customerService: CustomerService) { }
+  constructor(private CustomerRankingService: CustomerRankingService) { }
  
   ngOnInit() {
     this.getCustomersList();
   }
  
   getCustomersList() {
-    this.customerService.getCustomersList().snapshotChanges().pipe(
+    this.CustomerRankingService.getCustomersList().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({ key: c.payload.doc.id, ...c.payload.doc.data() })
@@ -27,16 +26,11 @@ export class CustomersListComponent implements OnInit {
       )
     ).subscribe(customers => {
       this.customers = customers;
-      console.log(this.customers);
-      this.dataSource = this.customers;
     });
   }
-
-
-
  
   deleteCustomers() {
-    this.customerService.deleteAll();
+    this.CustomerRankingService.deleteAll();
   }
  
 }

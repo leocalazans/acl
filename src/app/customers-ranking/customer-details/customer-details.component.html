@@ -1,17 +1,11 @@
-<nav>
-    <a routerLink="customers" class="btn btn-primary active" role="button" routerLinkActive="active">Customers</a>
-    <br>
-    <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
-  </nav>
-<h1>Customers</h1>
+<!-- 
 
-<div *ngFor="let customer of customers" style=" margin: 0 auto;width: 500px;">
-  <app-customer-details [customer]='customer'></app-customer-details>
-</div>
 
-<div style="margin-top:20px;">
-  <!-- <button type="button" class="button btn-danger" (click)='deleteCustomers()'>Delete All</button> -->
-</div>
+<td style="border:solid 1px red">{{customer.position}}</td>
+<td style="border:solid 1px red">{{customer.country}} {{customer.userName}}</td>
+<td style="border:solid 1px red">{{customer.won}}</td>
+<td style="border:solid 1px red">{{customer.lost}}</td>
+<td style="border:solid 1px red">{{customer.points}}</td> -->
 
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -44,9 +38,15 @@
   </ng-container>
   <ng-container matColumnDef="points">
     <th mat-header-cell *matHeaderCellDef> points </th>
-    <td mat-cell *matCellDef="let element"> {{element.points}} </td>
+    <td mat-cell *matCellDef="let element"> {{customer.points}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
