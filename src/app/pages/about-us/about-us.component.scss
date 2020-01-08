@@ -99,9 +99,23 @@ ol li{
     }
     .c__first-text p{
         margin-right: 68px;
-        margin-bottom: 25px;
+        &:not(:last-child){
+            margin-bottom: 30px;
+        }
     }
     .about{
         max-width: 100%;
+    }
+    .row img.first-image-about{
+        width: 85%;
+        display: block;
+        height: auto;
+        margin: inherit;
+    }
+    .flex {
+        display: flex;
+        &.right{
+            justify-content: flex-end;
+        }
     }
 }

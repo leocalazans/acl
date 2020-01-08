@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ListComponent } from './match/list/list.component';
-import { RegisterSitetesteSiteComponent } from './register-siteteste-site/register-siteteste-site.component';
+// import { ListComponent } from './match/list/list.component';
+// import { RegisterSitetesteSiteComponent } from './register-siteteste-site/register-siteteste-site.component';
 
 import { LoginSiteComponent } from './pages/login-site/login-site.component';
 import { RegisterSiteComponent } from './pages/register-site/register-site.component';
@@ -18,7 +18,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 // import { PlayersRegisterComponent } from './pages/register-site/players/players/players.component';
 
 const routes: Routes = [
-  { path: 'match',    component: ListComponent, },
+  // { path: 'match',    component: ListComponent, },
   { path: '',    
     component: HomeContentComponent,
   },
@@ -27,7 +27,7 @@ const routes: Routes = [
   // { path: 'register',    component: RegisterSiteComponent, },
   // { path: 'ranking',    component: RankingComponent, },
 
-  { path: 'teste',    component: RegisterSitetesteSiteComponent, },
+  // { path: 'teste',    component: RegisterSitetesteSiteComponent, },
   // register
   // { path: 'register/user',    component: UserRegisterComponent, },
   // { path: 'register/player',    component: PlayersRegisterComponent, },

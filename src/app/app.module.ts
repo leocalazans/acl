@@ -26,7 +26,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 // editi services
 
-import { ListComponent } from './match/list/list.component';
+// import { ListComponent } from './match/list/list.component';
 /* Auth service */
 import { AuthenticationService } from '../shared/authentication.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -87,7 +87,7 @@ import {Component} from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 
-import { RegisterSitetesteSiteComponent } from './register-siteteste-site/register-siteteste-site.component';
+// import { RegisterSitetesteSiteComponent } from './register-siteteste-site/register-siteteste-site.component';
 import { PagesModule } from './pages/pages.module'
 
 
@@ -123,11 +123,11 @@ export const createTranslateLoader = (http:HttpClient) =>{
   declarations: [
     AppComponent,
     MenuSiteComponent,
-    RegisterSitetesteSiteComponent,
+    // RegisterSitetesteSiteComponent,
     CustomerDetailsComponent,
     CustomersListComponent,
     CreateCustomerComponent,
-    ListComponent,
+    // ListComponent,
     DashboardComponent,
     ScoreComponent,
     // PlayersRegisterComponent,
