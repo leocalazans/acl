@@ -14,21 +14,23 @@ import { CustomersListComponent } from './customers/customers-list/customers-lis
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 // login routes
-import { UserRegisterComponent } from './pages/register-site/users/user/user.component';
-import { PlayersRegisterComponent } from './pages/register-site/players/players/players.component';
+// import { UserRegisterComponent } from './pages/register-site/users/user/user.component';
+// import { PlayersRegisterComponent } from './pages/register-site/players/players/players.component';
 
 const routes: Routes = [
   { path: 'match',    component: ListComponent, },
+  { path: '',    
+    component: HomeContentComponent,
+  },
   
-  { path: '',    component: HomeContentComponent, },
   { path: 'login',    component: LoginSiteComponent, },
-  { path: 'register',    component: RegisterSiteComponent, },
-  { path: 'ranking',    component: RankingComponent, },
+  // { path: 'register',    component: RegisterSiteComponent, },
+  // { path: 'ranking',    component: RankingComponent, },
 
   { path: 'teste',    component: RegisterSitetesteSiteComponent, },
   // register
-  { path: 'register/user',    component: UserRegisterComponent, },
-  { path: 'register/player',    component: PlayersRegisterComponent, },
+  // { path: 'register/user',    component: UserRegisterComponent, },
+  // { path: 'register/player',    component: PlayersRegisterComponent, },
     // { path: 'register/player',    
   //   loadChildren: ()=> import('./register-site/players/players/players.component').then(c => c.PlayersRegisterComponent)
   // },

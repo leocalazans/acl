@@ -56,6 +56,18 @@ body .icon_2x{
 .mat-form-field-infix{
     border-bottom-color:$base-color;
 }
+@media(max-width:990px){
+    .mat-paginator-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 56px;
+        padding: 0 8px;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+}
 @media(min-width:$monitor){
     body .mat-toolbar-row, body .mat-toolbar-single-row{
         padding:0 80px;

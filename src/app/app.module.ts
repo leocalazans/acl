@@ -110,9 +110,9 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import { HttpClientModule,HttpClient } from '@angular/common/http';
 
 import { ScoreComponent } from './score/score.component';
-import { PartnershipComponent } from './pages/register-site/partnership/partnership/partnership.component';
-import { PlayersRegisterComponent } from './pages/register-site/players/players/players.component';
-import { UserRegisterComponent } from './pages/register-site/users/user/user.component';
+// import { PartnershipComponent } from './pages/register-site/partnership/partnership/partnership.component';
+// import { PlayersRegisterComponent } from './pages/register-site/players/players/players.component';
+// import { UserRegisterComponent } from './pages/register-site/users/user/user.component';
 import { NavFooterComponent } from './shared/footer/nav-footer.component';
 // import { GooglePlacesComponent } from './register-site/players/google-plaes';
 export const createTranslateLoader = (http:HttpClient) =>{
@@ -130,9 +130,8 @@ export const createTranslateLoader = (http:HttpClient) =>{
     ListComponent,
     DashboardComponent,
     ScoreComponent,
-    PartnershipComponent,
-    PlayersRegisterComponent,
-    UserRegisterComponent,
+    // PlayersRegisterComponent,
+    // UserRegisterComponent,
     NavFooterComponent,
     // GooglePlacesComponent
     
@@ -194,7 +193,6 @@ export const createTranslateLoader = (http:HttpClient) =>{
     AngularFirestoreModule, 
     AngularFireStorageModule,
     HttpClientModule,
-
     PagesModule,
     
     TranslateModule.forRoot({

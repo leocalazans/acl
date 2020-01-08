@@ -1,28 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginSiteComponent } from './login-site/login-site.component';
-import { RegisterSiteComponent } from './register-site/register-site.component';
 import { RankingComponent } from './ranking/ranking.component';
-import { HomeContentComponent } from './home-content/home-content.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   
-  { path: '',    component: HomeContentComponent, },
-  { path: 'login',    component: LoginSiteComponent, },
-  { path: 'register',    component: RegisterSiteComponent, },
-  { path: 'ranking',    component: RankingComponent, },
 
-    // { path: 'register/player',    
-  //   loadChildren: ()=> import('./register-site/players/players/players.component').then(c => c.PlayersRegisterComponent)
-  // },
+  { path: 'ranking',    component: RankingComponent, },
+  { path: 'about',    component: AboutUsComponent, },
+
+  { path: 'register',    
+    loadChildren: ()=> import('./register-site/register.module').then(c => c.RegisterModule)
+  },
   
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class PagesRoutingModule { }

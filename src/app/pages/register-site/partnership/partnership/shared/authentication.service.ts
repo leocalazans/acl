@@ -3,8 +3,8 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { Observable } from 'rxjs';
 import { auth } from 'firebase/app';
 import { Router } from '@angular/router';
-// import { RegisterService } from '../user.service';
-// import { Usersite } from '../usersite';
+import { RegisterService } from '../user.service';
+import { Usersite } from '../usersite';
 
 
 @Injectable({
@@ -13,18 +13,18 @@ import { Router } from '@angular/router';
 
 export class AuthenticationService {
   userData: Observable<firebase.User>;
-    // usersite: Usersite = new Usersite();
+    usersite: Usersite = new Usersite();
 
   constructor(
-    // private RegisterService: RegisterService,
+    private RegisterService: RegisterService,
     private angularFireAuth: AngularFireAuth,
     private router:Router
     ) {
     this.userData = angularFireAuth.authState;
   }
   save() {
-    // this.RegisterService.createCustomer(this.usersite);
-    // this.usersite = new Usersite();
+    this.RegisterService.createCustomer(this.usersite);
+    this.usersite = new Usersite();
   }
   /* Sign up */
   SignUp(email: string, password: string) {

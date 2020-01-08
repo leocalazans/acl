@@ -10,7 +10,7 @@
     </mat-form-field>
      -->
     <div class="content-filter">
-      <mat-icon aria-hidden="false" aria-label="Example home icon">Search</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Search Search icon">search</mat-icon>
       <input type="text" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Players">
     </div>
     
@@ -73,14 +73,15 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;">
         </mat-row>
       </mat-table>
-      
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      <div class="content__paginator">
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      </div>
     </div>
   </div>
   
 </div>
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-sm">
       One of three columns
@@ -92,4 +93,4 @@
       One of three columns
     </div>
   </div>
-</div>
+</div> -->

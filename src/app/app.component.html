@@ -154,6 +154,7 @@
     <mat-list (click)="drawer.toggle()" class="lisTmenu">
       <mat-list-item  *ngIf="!(authenticationService.userData | async)" > <a mat-raised-button routerLink="/login"	routerLinkActive="active">Login</a></mat-list-item>
       <mat-list-item  *ngIf="(authenticationService.userData | async)" > <a mat-raised-button routerLink="/dashboard"	routerLinkActive="active">dashboard</a></mat-list-item>
+      <mat-list-item> <a routerLink="/about" routerLinkActive="active" mat-button>{{ "What's Air Soccer?" | translate }}</a></mat-list-item>
       <mat-list-item> <a mat-button>Salt</a></mat-list-item>
       <mat-list-item> <a mat-button>Paprika</a></mat-list-item>
      </mat-list>

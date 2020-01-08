@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { LoginSiteComponent } from './login-site/login-site.component';
-import { RegisterSiteComponent } from './register-site/register-site.component';
+// import { RegisterSiteComponent } from './register-site/register-site.component';
 import { RankingComponent } from './ranking/ranking.component';
 import { HomeContentComponent } from './home-content/home-content.component';
 // register
@@ -21,10 +21,12 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 import { TableResultComponent } from './ranking/table-result/table-result.component';
 import { BannerHomeComponent } from './home-content/banner-home/banner-home.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 export const createTranslateLoader = (http:HttpClient) =>{
@@ -34,11 +36,12 @@ export const createTranslateLoader = (http:HttpClient) =>{
 @NgModule({
   declarations: [
     LoginSiteComponent,
-    RegisterSiteComponent,
+    // RegisterSiteComponent,
     RankingComponent,
     HomeContentComponent,
     BannerHomeComponent,
-    TableResultComponent
+    TableResultComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,3 @@
-
-
-
-
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from './shared/authentication.service'
 import { RegisterService } from './user.service';
@@ -71,9 +67,9 @@ export interface shirt {
 }
 
 @Component({
-  selector: 'app-partnership',
-  templateUrl: './partnership.component.html',
-  styleUrls: ['./partnership.component.scss'],
+  selector: 'app-user-register',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss'],
   providers: [
     // `MomentDateAdapter` can be automatically provided by importing `MomentDateModule` in your
     // application's root module. We provide it at the component level here, due to limitations of
@@ -88,8 +84,7 @@ export interface shirt {
   ],
 })
 
-
-export class PartnershipComponent implements OnInit {
+export class PlayersRegisterComponent implements OnInit {
   
   email: string;
   password: string;
@@ -117,7 +112,7 @@ export class PartnershipComponent implements OnInit {
         values => {
           this.seasons = Object.keys(values).map(key => values[key]);
         }
-      );
+     );
     }
     
     // signUp() {
@@ -145,7 +140,6 @@ export class PartnershipComponent implements OnInit {
     }
     // favoriteSeason: string;
     seasons: string[] = ['Female', 'Male'];
-    pTypes: string[] = ['Person', 'Company'];
     
     usersite: Usersite = new Usersite();
     submitted = false;
