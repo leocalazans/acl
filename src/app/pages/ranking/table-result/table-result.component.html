@@ -10,7 +10,7 @@
     </mat-form-field>
      -->
     <div class="content-filter">
-      <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Example home icon">Search</mat-icon>
       <input type="text" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Players">
     </div>
     
@@ -20,7 +20,7 @@
         <!-- ID Column -->
         <ng-container matColumnDef="Position">
           <mat-header-cell class=" first__table" *matHeaderCellDef mat-sort-header> Pos. </mat-header-cell>
-          <mat-cell class="first__table" *matCellDef="let row"> {{row.Position}} </mat-cell>
+          <mat-cell class="first__table" *matCellDef="let row"> {{row.position}} </mat-cell>
         </ng-container>
         
         <!-- Name Column -->
@@ -78,4 +78,18 @@
     </div>
   </div>
   
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
 </div>

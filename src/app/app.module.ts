@@ -31,8 +31,10 @@ import { ListComponent } from './match/list/list.component';
 import { AuthenticationService } from '../shared/authentication.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MenuSiteComponent } from './menu-site/menu-site.component';
-import { LoginSiteComponent } from './login-site/login-site.component';
+
+import { MenuSiteComponent } from './shared/menu-site/menu-site.component';
+
+// import { LoginSiteComponent } from './pages/login-site/login-site.component';
 
 // Angular material designer inports
 import {A11yModule} from '@angular/cdk/a11y';
@@ -56,8 +58,11 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
+
 import {MatIconModule} from '@angular/material/icon';
+
 import {MatInputModule} from '@angular/material/input';
+
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
@@ -81,33 +86,34 @@ import {MatTreeModule} from '@angular/material/tree';
 import {Component} from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
-import { RegisterSiteComponent } from './register-site/register-site.component';
+
 import { RegisterSitetesteSiteComponent } from './register-siteteste-site/register-siteteste-site.component';
-import { BannerHomeComponent } from './banner-home/banner-home.component';
-import { RankingComponent } from './ranking/ranking.component';
-import { HomeContentComponent } from './home-content/home-content.component';
-import { TableResultComponent } from './ranking/table-result/table-result.component';
+import { PagesModule } from './pages/pages.module'
+
+
 // customer
 import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
 import { CustomersListComponent } from './customers/customers-list/customers-list.component';
 import { CreateCustomerComponent } from './customers/create-customer/create-customer.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 // import table results 
-// import {TableResultComponent} from './';
 
 
 // forms
 
 // translate
 import { TranslateModule, TranslateLoader} from "@ngx-translate/core";
+
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+
 import { HttpClientModule,HttpClient } from '@angular/common/http';
+
 import { ScoreComponent } from './score/score.component';
-import { PartnershipComponent } from './register-site/partnership/partnership/partnership.component';
-import { PlayersRegisterComponent } from './register-site/players/players/players.component';
-import { UserRegisterComponent } from './register-site/users/user/user.component';
-import { NavFooterComponent } from './footer/nav-footer.component';
+import { PartnershipComponent } from './pages/register-site/partnership/partnership/partnership.component';
+import { PlayersRegisterComponent } from './pages/register-site/players/players/players.component';
+import { UserRegisterComponent } from './pages/register-site/users/user/user.component';
+import { NavFooterComponent } from './shared/footer/nav-footer.component';
 // import { GooglePlacesComponent } from './register-site/players/google-plaes';
 export const createTranslateLoader = (http:HttpClient) =>{
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -117,13 +123,7 @@ export const createTranslateLoader = (http:HttpClient) =>{
   declarations: [
     AppComponent,
     MenuSiteComponent,
-    LoginSiteComponent,
-    RegisterSiteComponent,
     RegisterSitetesteSiteComponent,
-    BannerHomeComponent,
-    RankingComponent,
-    HomeContentComponent,
-    TableResultComponent,
     CustomerDetailsComponent,
     CustomersListComponent,
     CreateCustomerComponent,
@@ -194,6 +194,9 @@ export const createTranslateLoader = (http:HttpClient) =>{
     AngularFirestoreModule, 
     AngularFireStorageModule,
     HttpClientModule,
+
+    PagesModule,
+    
     TranslateModule.forRoot({
       loader:{
         provide: TranslateLoader,
