@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RankingComponent } from './ranking/ranking.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { LoginSiteComponent } from './login-site/login-site.component';
 
 const routes: Routes = [
   
 
   { path: 'ranking',    component: RankingComponent, },
+  { path: 'login',    component: LoginSiteComponent, },
   { path: 'about',    component: AboutUsComponent, },
 
   { path: 'register',    

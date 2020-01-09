@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../../../shared/authentication.service';
+import { AuthenticationService } from '../../../../shared/authentication.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
