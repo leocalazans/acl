@@ -114,6 +114,8 @@ import { ScoreComponent } from './score/score.component';
 // import { PlayersRegisterComponent } from './pages/register-site/players/players/players.component';
 // import { UserRegisterComponent } from './pages/register-site/users/user/user.component';
 import { NavFooterComponent } from './shared/footer/nav-footer.component';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 // import { GooglePlacesComponent } from './register-site/players/google-plaes';
 export const createTranslateLoader = (http:HttpClient) =>{
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -202,7 +204,13 @@ export const createTranslateLoader = (http:HttpClient) =>{
         deps:[HttpClient]
       }
 
-    })
+    }),
+    
+    // NbThemeModule.forRoot({ name: 'default' }),
+    
+    // NbLayoutModule,
+    
+    // NbEvaIconsModule
     
   ],
   exports:[

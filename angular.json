@@ -24,8 +24,10 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/favicon-32x32.png",
+              "src/favicon-16x16",
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
@@ -93,7 +95,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
@@ -124,6 +127,128 @@
           "configurations": {
             "production": {
               "devServerTarget": "acl:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "adm": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "root": "projects/adm",
+      "sourceRoot": "projects/adm/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/adm",
+            "index": "projects/adm/src/index.html",
+            "main": "projects/adm/src/main.ts",
+            "polyfills": "projects/adm/src/polyfills.ts",
+            "tsConfig": "projects/adm/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/adm/src/favicon.ico",
+              "projects/adm/src/assets"
+            ],
+            "styles": [
+              "projects/adm/src/styles.sass"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/adm/src/environments/environment.ts",
+                  "with": "projects/adm/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "adm:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "adm:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "adm:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/adm/src/test.ts",
+            "polyfills": "projects/adm/src/polyfills.ts",
+            "tsConfig": "projects/adm/tsconfig.spec.json",
+            "karmaConfig": "projects/adm/karma.conf.js",
+            "assets": [
+              "projects/adm/src/favicon.ico",
+              "projects/adm/src/assets"
+            ],
+            "styles": [
+              "projects/adm/src/styles.sass"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/adm/tsconfig.app.json",
+              "projects/adm/tsconfig.spec.json",
+              "projects/adm/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/adm/e2e/protractor.conf.js",
+            "devServerTarget": "adm:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "adm:serve:production"
             }
           }
         }
