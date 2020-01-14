@@ -28,7 +28,6 @@ import { TableResultComponent } from './ranking/table-result/table-result.compon
 import { BannerHomeComponent } from './home-content/banner-home/banner-home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
-
 export const createTranslateLoader = (http:HttpClient) =>{
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }; 

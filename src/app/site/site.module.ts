@@ -20,7 +20,6 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
 // editi services
-
 // import { EditComponent } from './users/edit/edit.component';
 // import { ListComponent } from './users/list/list.component';
 
@@ -35,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuSiteComponent } from './shared/menu-site/menu-site.component';
 
 // import { LoginSiteComponent } from './pages/login-site/login-site.component';
+// import { SiteComponent } from './site.component';
 
 // Angular material designer inports
 import {A11yModule} from '@angular/cdk/a11y';
@@ -216,7 +216,8 @@ export const createTranslateLoader = (http:HttpClient) =>{
     
   ],
   exports:[
-    MatTableModule
+    MatTableModule,
+    SiteComponent
   ],
   providers: [AuthenticationService, { provide: FirestoreSettingsToken, useValue: {}}],
   bootstrap: [AppComponent]
