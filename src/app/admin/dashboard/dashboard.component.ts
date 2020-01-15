@@ -8,7 +8,7 @@ import { auth } from 'firebase/app';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  submitted: boolean;
   constructor(public authenticationService: AuthenticationService) {}
   signOut() {
     this.authenticationService.SignOut();

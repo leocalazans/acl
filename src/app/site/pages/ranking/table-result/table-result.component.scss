@@ -60,6 +60,10 @@ td, th {
     line-height: 2em;
 align-items: center;
 }
+
+.mat-button.mat-primary .mat-button-focus-overlay {
+    background-color: transparent;
+  }
 .mat-cell{
     font-weight: 500;
     line-height: 2em;
@@ -125,13 +129,17 @@ h1{
 }
 @media(max-width:990px){
     .mat-cell:first-of-type, .mat-footer-cell:first-of-type, .mat-header-cell:first-of-type{
-        padding-left:15px;
+        padding-left:10px;
         margin-left: 0px;
 
     }
     .mat-header-cell {
+        &:nth-child(1){
+            min-width: 43px;
+        }
         &:nth-child(2){
             min-width: 60px;
+            max-width: 150px;
         }
         &:nth-child(3){
             max-width: 30px;
@@ -140,12 +148,16 @@ h1{
             max-width: 30px;
         }
         &:nth-child(5){
-            max-width: 30px;
+            max-width: 50px;
         }
     }
     .mat-cell{
+        &:nth-child(1){
+            min-width: 43px;
+        }
         &:nth-child(2){
             min-width: 60px;
+            max-width: 150px;
         }
         &:nth-child(3){
             max-width: 30px;
@@ -154,7 +166,7 @@ h1{
             max-width: 30px;
         }
         &:nth-child(5){
-            max-width: 30px;
+            max-width: 50px;
         }
     }
     .content__paginator {

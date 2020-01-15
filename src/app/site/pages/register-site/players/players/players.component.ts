@@ -89,12 +89,14 @@ export class PlayersRegisterComponent implements OnInit {
   email: string;
   password: string;
   isLinear = true;
-  // firstFormGroup: FormGroup;
-  // secondFormGroup: FormGroup;
   userpass: string;
   EnableInput: boolean= true;
   error: string;
-  
+  hide: boolean;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  adress: string;
+
   constructor(public authenticationService: AuthenticationService, 
     private RegisterService: RegisterService,
     private router:Router,

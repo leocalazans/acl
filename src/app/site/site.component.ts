@@ -20,9 +20,10 @@ export class SiteComponent {
       translate.use(browserLang.match(/en_US|pt_BR/) ? browserLang : 'en_US');  
     } else {  
       let userLang = navigator.language ;
+      console.log(userLang);
       userLang = userLang.replace("-", "_");
       (userLang == "pt_PT ")? "pt_BR" : userLang;
-      localStorage.setItem('locale', 'en_US');  
+      localStorage.setItem('locale', userLang);  
       translate.setDefaultLang(userLang);  
     }  
   }  

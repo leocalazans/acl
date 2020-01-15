@@ -26,6 +26,7 @@ export class LoginSiteComponent {
   password: string;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  hide: boolean;
 
   constructor(public authenticationService: AuthenticationService,
     private router: Router, 

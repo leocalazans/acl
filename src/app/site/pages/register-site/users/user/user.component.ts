@@ -18,7 +18,7 @@ export class UserRegisterComponent implements OnInit {
   email: string;
   password: string;
   error: string;
-  
+  hide: boolean;
   constructor(public authenticationService: AuthenticationService, 
     private RegisterService: RegisterService,
     private translate: TranslateService,

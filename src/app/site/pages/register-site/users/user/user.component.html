@@ -75,7 +75,7 @@
             
             <!-- <button mat-button class="border-gray" (click)="signUp()" color="primary" routerLink="/register" routerLinkActive="active">SING UP HERE</button> -->
             <!-- <button mat-flat-button  color="primary"  (click)="signUp()" routerLink="/login" routerLinkActive="active">REGISTER </button> -->
-            <button mat-flat-button  color="primary"  (click)="signUp()" >REGISTER </button>
+            <button mat-flat-button  color="primary"  (click)="signUp()" [routerLink]="['/', {  outlets: { adm: ['dashboard'] } }]" >REGISTER </button>
         </div>
     </div>
     </form>

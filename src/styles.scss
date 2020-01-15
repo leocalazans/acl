@@ -128,3 +128,6 @@ mat-card {
         padding: 0.5em;
     }
 }
+.mat-button.mat-primary .mat-button-focus-overlay, .mat-button:hover, .mat-button-focus-overlay {
+  background-color: transparent;
+}

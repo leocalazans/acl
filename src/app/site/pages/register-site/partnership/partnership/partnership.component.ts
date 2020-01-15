@@ -99,6 +99,10 @@ export class PartnershipComponent implements OnInit {
   userpass: string;
   EnableInput: boolean= true;
   error: string;
+  hide: boolean;
+  firstFormGroup: string;
+  secondFormGroup: string;
+  address: string;
   
   constructor(public authenticationService: AuthenticationService, 
     private RegisterService: RegisterService,

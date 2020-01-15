@@ -177,7 +177,7 @@
             </mat-form-field>
           </div>
           <mat-form-field >
-            <input matInput placeholder="Address" [(ngModel)]="usersite.address" [ngModelOptions]="{standalone: true}" required>
+            <input matInput placeholder="adress" [(ngModel)]="usersite.adress" [ngModelOptions]="{standalone: true}" required>
           </mat-form-field>
           <div class="d-flex">
             <mat-form-field class="w-6 m-r-5">
@@ -253,8 +253,8 @@
       </div>
    </div>
     <div>
-      <button mat-button matStepperPrevious>I'M READY</button>
-      <button mat-flat-button  color="primary"  (click)="signUp()" >REGISTER </button>
+      <!-- <button mat-button matStepperPrevious>I'M READY</button> -->
+      <button mat-flat-button  color="primary" [routerLink]="['/', {  outlets: { adm: ['dashboard'] } }]"  (click)="signUp()" >REGISTER </button>
     </div>
   </mat-step>
 </mat-horizontal-stepper>
