@@ -7,7 +7,7 @@ export class Player {
     country: string;
     lost: number;
     won: number;
-    position: number;
+    global_position: number;
     permision: number;
     active = true;
   }

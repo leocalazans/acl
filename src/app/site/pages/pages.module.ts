@@ -22,6 +22,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSortModule} from '@angular/material/sort';
 
 
 import { TableResultComponent } from './ranking/table-result/table-result.component';
@@ -56,6 +57,7 @@ export const createTranslateLoader = (http:HttpClient) =>{
     RegisterModule,
     HttpClientModule,
     MatTableModule,
+    MatSortModule,
     MatPaginatorModule,
     TranslateModule.forRoot({
       loader:{

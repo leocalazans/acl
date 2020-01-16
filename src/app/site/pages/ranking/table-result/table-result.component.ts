@@ -42,6 +42,8 @@ export class TableResultComponent implements OnInit {
 
   ngOnInit() {
     this.getCustomersList();
+    // this.dataSource.sort = this.sort;
+
   }
 
   getCustomersList() {
@@ -54,8 +56,11 @@ export class TableResultComponent implements OnInit {
     ).subscribe(players => {
       this.players = players;
       console.log(this.players);
+
       this.dataSource = new MatTableDataSource(this.players);
+
       this.dataSource.sort = this.sort;
+
       this.dataSource.paginator = this.paginator;
 
     });

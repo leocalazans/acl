@@ -11,11 +11,12 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 // const controllerSearch = false;
 
 export class MenuSiteComponent  {
+  nativeElement : string;
   enteredButton = false;
   isMatMenuOpen = false;
   isMatMenu2Open = false;
   prevButtonTrigger;
-
+  button = true;
   constructor(private ren: Renderer2){}
 
   menuenter() {

@@ -18,7 +18,7 @@
     height:100%;
     display: flex;
     align-items: center;
-    color: #404041;
+    color: #fff;
     position: absolute;
     right: 0px;
     input{
@@ -28,7 +28,7 @@
         color: #04df26;
         border: none;
         background-color: #04df26;
-        border-bottom: solid 1px #404041;
+        border-bottom: solid 1px #fff;
         min-width: 198px;
         max-width: 198px;
         padding: 0px 10px;
@@ -136,7 +136,7 @@
     .mat-button{
         font-weight: medium;
         font-size: 20px;
-        color: #404041;
+        color: #fff;
     }
 }
 #s_header__menu{
@@ -156,7 +156,7 @@
     cursor: pointer;
 }
 //  
-@media(max-width:767px){
+@media(max-width:990px){
     .mat-menu-panel {
         margin-left: 15px;
     }
@@ -201,8 +201,13 @@
    .ng-tns-c11-2{
        display: none;
    }
+   
 }
-
+@media(min-width:990px) and (max-width:1400px){
+    .sub__menu{
+        width: calc(100% + 30px);
+    }
+}
 @media(min-width:1090px){
     .default-container.first{
 

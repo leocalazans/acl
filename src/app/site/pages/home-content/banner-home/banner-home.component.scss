@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit:900&display=swap');
+
 @keyframes sliderBg {
     0% {
         visibility: hidden;
@@ -15,7 +17,7 @@
 
     }
   }
-@keyframes slideDown {
+@keyframes slideRight {
     0% {
         // visibility: hidden;
         right: -500px;
@@ -31,232 +33,449 @@
         right: 0;
         opacity: 1;
     }
-  }
+}
+
+@keyframes slideLeft {
+    0% {
+        // visibility: hidden;
+        left: -500px;
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+
+    }
+    100% {
+        // visibility: visible;
+        
+        left: 0;
+        opacity: 1;
+    }
+}
+@keyframes toBottom {
+    0% {
+        bottom: -0;
+        opacity: 0.2;
+    }
+    
+    100% {
+        bottom: -9px;
+        opacity: 0.5;
+    }
+}
 .content__banner_bg{
     width: 100%;
     height: auto;
-    background-color: #04df26;
-    background-image: url('/../../../assets/images/MESA_BANNER_ANIMADO_PT1-mob.png');
-    background-repeat: no-repeat;
-    background-size:100% auto;
-    background-position: 100% 100%;
-    animation: sliderBg 0.3s 1;
-    display: block;
-    max-height: 80vh;
-    min-height: 65vh;
+    background-color: #fff;
+    &:after {
+        content: ' ';
+        position: absolute;
+        right:0px;
+        bottom: 0px;
+        width: 0; 
+        height: 0; 
+        border-top: 71vh solid transparent;
+        border-bottom: 0px solid transparent; 
+        border-right:100vw solid #04df26; 
+      }
 }
 .default-container{
     justify-content: center;
     position: relative;
-    // &.bk-green{
-    // }
-    // &:after{
-    //     content:" ";
-    //     display: block;
-    //     width: 100vw;
-    //     left: calc(-1140px - -100vw);
-    //     height: 100%;
-    //     background-color: #44d925;
-    //     position: absolute;
-    // }
-
 }
 
-.right__content{
-    padding: 0px 20px;
-    p{
-        position: relative;
-        font-size: 2em;
-        font-weight: 800;
-        text-transform: capitalize;
-        line-height: 0.8;
-        margin-top: 40px;
-        // margin-top: 40px;
-        // padding:0 25px;
-        box-sizing: border-box;
-        span{
-            font-size: 1.1em;
-            font-weight: 500;
-            margin-left: 40px;
-            &.zmore{
-                margin-left: 0px;
-                position: relative;
-                z-index: 4444;
-                font-size: 1em;
-            }
-        }
-        &.small{
-            font-size: 1rem;
-
-        }
-    }
-}
 .content__banner-home{
     position: relative;
     width: 100%;
     height: 100%;
-    // background-color: blue;
-    display: flex;
-    // align-items: flex-end;
-    padding-top: 40px;
-    & div{
-        // background-color: red;
-        width: 100%;
-        &:last-child{
-            width:100%;
-            position: absolute;
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            height: 100%;
-            background-color: transparent;
-            height: 50vh;
-            img{
-                position: relative;
-                margin-bottom: -70px;
-                animation: slideDown 1.2s 1;
-                // opacity: 0;
+    max-width: 100%;
+    min-height: 95vh;
+}
 
-            }
-        }
+.right__content{
+    max-width: 100%;
+    padding: 20px 40px;
+    img{
+        max-width: 100%;
     }
-    & img{
-        max-width: 60%;
-        height: auto;
+    h1{
+        position: relative;
+        font-family: 'Kanit', sans-serif;
+        font-size: 3em;
+        line-height: 0.8em;
+        animation: slideLeft 1.7s 1;
+    }
+    .small{
+        position: relative;
+        animation: slideLeft 1.7s 1;
+
     }
 }
 
-
-@media(min-width: 990px){
-    @keyframes sliderBg {
-        from {
-            background-position: 400% 100%;
-    
-        }
-      
-        to {
-            background-position: 100% 100%;
-        }
-      }
-    @keyframes slideDown {
-        0% {
-            // visibility: hidden;
-            right: -500px;
-            opacity: 0;
-        }
-        10%{
-            opacity: 1;
-    
-        }
-        to {
-            // visibility: visible;
-            
-            right: 0;
-            opacity: 1;
-        }
-    }
-    @keyframes slideLeft {
-        0% {
-            // visibility: hidden;
-            left: -500px;
-            opacity: 0;
-        }
-        10%{
-            opacity: 1;
-    
-        }
-        to {
-            // visibility: visible;
-            
-            left: 0;
-            opacity: 1;
-        }
-    }  
-
-    .content__banner_bg{
+.left__content{
+    position: relative;
+    height: auto;
+    min-height: 400px;
+    & img.image-bg{
+        max-width: 100%;
         width: 100%;
+        max-width: 500px;
         height: auto;
-        // background-color: #ffff;
-        background-image: url('/../../../assets/images/MESA_BANNER_ANIMADO_PT1.png');
-        background-repeat: no-repeat;
-        background-size: 85%;
-        background-position: 100% 100%;
-        animation: sliderBg 0.7s 1;
-        display: block;
-        max-height: 80vh;
-        min-height: 40vh;
-        height: 50vh;
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        z-index: 33;
+        animation: slideRight 1.7s 1;
+        // transition: animation 0.3s cubic-bezier(1,-0.9, 1, 1);
+        
     }
-    .default-container{
-        justify-content: center;
-        position: relative;
-        // &.bk-green{
-        // }
-        // &:after{
-        //     content:" ";
-        //     display: block;
-        //     width: 100vw;
-        //     left: calc(-1140px - -100vw);
-        //     height: 100%;
-        //     background-color: #44d925;
-        //     position: absolute;
-        // }
+    & img.img-fut{
+        position: absolute;
+        width: 100%;
+        max-width: 200px;
+        top: -50px;
+        right: 0px;
+        z-index: 44;
+        animation: slideRight 1s 1;
+        // transition: animation 0.3s cubic-bezier(1,-0.9, 1, 1);
+        
+    }
+}
+.scroll__down{
+    width: 100%;
+    position: absolute;
+    height: 80px;
     
+    z-index: 777;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .arrow{
+        width: 40px;
+        height: 2px;
+        position: relative;
+        margin-top: 10px;
+        &:after{
+            position: absolute;
+            content: " ";
+            width: 50%;
+            height: 100%;
+            display: block;
+            background-color: #fff;
+            transform: rotate(30deg);
+            left: 2px;
+            animation: toBottom .5s infinite;
+        }
+        &:before{
+            content: " ";
+            position: absolute;
+            right: 3px;
+            width: 50%;
+            height: 100%;
+            display: block;
+            background-color: #fff;
+            transform: rotate(-30deg);
+            animation: toBottom .5s infinite;
+        }
+    }
+    .text{
+        color: #fff;
+        text-transform: lowercase;
+        opacity: 0.7;
+        font-size: 0.8em;
+    }
+}
+@media(min-width:411px){
+    .scroll__down{
+        display: none;
+    }
+    .left__content{
+        & img.img-fut{
+            position: absolute;
+            width: 100%;
+            max-width: 220px;
+        }
+    }
+}
+@media(min-width:767px){
+    .content__banner-home{
+        width: 100%;
     }
     .right__content{
-        padding : 0px;
-        p{
-            position: relative;
-            font-size: 3em;
-            font-weight: 800;
-            text-transform: capitalize;
-            line-height: 0.8;
-            margin-top: initial;
-            span{
-                font-size: 1.1em;
-                font-weight: 500;
-                margin-left: 40px;
-            }
-            &.small{
-                font-size: 1.3em;
-                font-weight: 550;
-                text-align: right;
-                line-height: 1.1em;
-            }
+        width: 60%;
+        h1{
+            font-family: 'Kanit', sans-serif;
+            font-size: 3.6em;
+            line-height: 0.8em;
+            text-align: left;
+        }
+        .small{
+            text-align: left;
+            font-size: 1.2em;
+
+        }
+    }
+    .left__content{
+        height: auto;
+        width: 60%;
+        // background: red;
+        position: absolute;
+        right: 40px;
+        top: 125px;
+        // img.image-bg{
+        //     top: 7em;
+        // }
+        & img.img-fut{
+            top: -50px;
+
         }
     }
     .content__banner-home{
+        min-height: 50vh;
+    }
+    .content__banner_bg:after {
+        border-top: 35vh solid transparent;
+        border-bottom: 0px solid transparent; 
+        border-right:100vw solid #04df26; 
+      }
+}
+@media(min-width:990px){
+    .right__content{
+        width: 55%;
         position: relative;
-        width: 100%;
-        height: 100%;
-        // background-color: blue;
         display: flex;
-        align-items: center;
-        padding-top: 0px;
-        & div{
-            // background-color: red;
-            width: 65%;
-            &:last-child{
-                width:78%;
-                position: relative;
-                display: flex;
-                justify-content: flex-end;
-                align-items: flex-end;
-                height: 100%;
-                background-color: transparent;
-                height: 50vh;
-                img{
-                    position: relative;
-                    margin-bottom: 70px;
-                    animation: slideDown 1.2s 1;
-                    // opacity: 0;
-                    width: 68%;
-                }
-            }
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-top:40px ;
+        h1{
+            font-size: 3.5em;
+            line-height: 0.8em;
+            text-align: right;
         }
-        & img{
-            max-width: 100%;
-            height: auto;
+        .small{
+            margin-top: 0px;
+            text-align: right;
+            max-width: 80%;
+            right: 0px;
+        }
+    }
+    .left__content{
+        width: 60%;
+        // background: red;
+        right: 40px;
+        top: 90px;
+        // img.image-bg{
+        //     top: 7em;
+        // }
+        & img.img-fut{
+            top: -50px;
+
+        }
+    }
+    .content__banner-home{
+        min-height: 50vh;
+    }
+    .content__banner_bg{
+        position: relative;
+        &:after {
+            border-top: 30vh solid transparent;
+            border-bottom: 0px solid transparent; 
+            border-right:100vw solid #04df26; 
         }
     }
 }
+
+
+// @media(min-width: 767px ) and( max-width:990px){
+//     .content__banner-home{
+//         & div{
+//             &:last-child{
+//                 height: auto;
+//                 img{
+//                     position: relative;
+//                     margin-bottom: 10px;
+//                     animation: slideDown 1.2s 1;
+//                     // opacity: 0;
+    
+//                 }
+//             }
+//         }
+//     }
+//     .content__banner_bg{
+//         width: 100%;
+//         height: auto;
+//         // background-color: #ffff;
+//         // background-image: url('/../../../assets/images/MESA_BANNER_ANIMADO_PT1.png');
+//         // background-repeat: no-repeat;
+//         // background-size: 85%;
+//         // // background-position: 100% 100%;
+//         // background-size: 169% auto;
+//         // background-position: 44% 100%;
+//         // animation: sliderBg 0.7s 1;
+//         // display: block;
+//         // max-height: 80vh;
+//         // min-height: 40vh;
+//         height: 50vh;
+//     }
+//     .right__content{
+//         p{
+//             &.small{
+//                 max-width: 50%;
+    
+//             }
+//         }
+//     }
+// }
+
+// @media(min-width: 990px){
+//     @keyframes sliderBg {
+//         from {
+//             background-position: 400% 100%;
+    
+//         }
+      
+//         to {
+//             background-position: 100% 100%;
+//         }
+//       }
+//     @keyframes slideDown {
+//         0% {
+//             // visibility: hidden;
+//             right: -500px;
+//             opacity: 0;
+//         }
+//         10%{
+//             opacity: 1;
+    
+//         }
+//         to {
+//             // visibility: visible;
+            
+//             right: 0;
+//             opacity: 1;
+//         }
+//     }
+//     @keyframes slideLeft {
+//         0% {
+//             // visibility: hidden;
+//             left: -500px;
+//             opacity: 0;
+//         }
+//         10%{
+//             opacity: 1;
+    
+//         }
+//         to {
+//             // visibility: visible;
+            
+//             left: 0;
+//             opacity: 1;
+//         }
+//     }  
+
+//     .content__banner_bg{
+//         width: 100%;
+//         height: auto;
+//         // background-color: #ffff;
+//         // background-image: url('/../../../assets/images/MESA_BANNER_ANIMADO_PT1-mob.png');
+//         background-repeat: no-repeat;
+//         background-size: 65%;
+//         background-position: 100% 100%;
+//         animation: sliderBg 0.7s 1;
+//         display: block;
+//         max-height: 80vh;
+//         min-height: 40vh;
+//         height: auto;
+//     }
+//     .default-container{
+//         justify-content: center;
+//         position: relative;
+//         // &.bk-green{
+//         // }
+//         // &:after{
+//         //     content:" ";
+//         //     display: block;
+//         //     width: 100vw;
+//         //     left: calc(-1140px - -100vw);
+//         //     height: 100%;
+//         //     background-color: #44d925;
+//         //     position: absolute;
+//         // }
+    
+//     }
+//     .right__content{
+//         padding : 0px;
+//         p{
+//             position: relative;
+//             font-size: 3em;
+//             font-weight: 800;
+//             // text-transform: capitalize;
+//             line-height: 0.8;
+//             margin-top: initial;
+//             span{
+//                 font-size: 1.1em;
+//                 font-weight: 500;
+//                 margin-left: 40px;
+//             }
+//             &.small{
+//                 font-size: 1.3em;
+//                 font-weight: 550;
+//                 text-align: right;
+//                 line-height: 1.1em;
+//             }
+//         }
+//     }
+//     .content__banner-home{
+//         position: relative;
+//         width: 100%;
+//         height: 100%;
+//         // background-color: blue;
+//         display: flex;
+//         align-items: center;
+//         padding-top: 0px;
+//         & div{
+//             // background-color: red;
+//             width: 65%;
+//             &:last-child{
+//                 width:78%;
+//                 position: relative;
+//                 display: flex;
+//                 justify-content: flex-end;
+//                 align-items: flex-end;
+//                 height: 100%;
+//                 background-color: transparent;
+//                 height: 50vh;
+//                 img{
+//                     position: relative;
+//                     margin-bottom: 70px;
+//                     animation: slideDown 1.2s 1;
+//                     // opacity: 0;
+//                     width: 68%;
+//                 }
+//             }
+//         }
+//         & img{
+//             max-width: 100%;
+//             height: auto;
+//         }
+//     }
+// }
+// @media(min-width:1400px){
+//     .content__banner_bg{
+//         width: 100%;
+//         height: auto;
+//         // background-color: #ffff;
+//         background-image: url('/../../../assets/images/MESA_BANNER_ANIMADO_PT1.png');
+//         background-repeat: no-repeat;
+//         background-size: 85%;
+//         background-position: 100% 100%;
+//         animation: sliderBg 0.7s 1;
+//         display: block;
+//         max-height: 80vh;
+//         min-height: 40vh;
+//         height: 50vh;
+//     }
+// }
