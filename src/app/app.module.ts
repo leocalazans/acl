@@ -34,12 +34,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminModule } from './admin/admin.module';
+import { PartnershipComponent } from './pages/partnership/partnership.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    PartnershipComponent,
    
   ],
   imports: [

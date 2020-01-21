@@ -157,28 +157,17 @@
     </mat-drawer>
   
     <div class="content-sidenav-content">
-      
-      <button class="btnMenu btnMenu-show" mat-button (click)="drawer.toggle()">
-        
-      </button>
-      <app-menu-site></app-menu-site>
-      <router-outlet></router-outlet>
-  
-      <!-- <app-list></app-list> -->
-      <!-- <app-login-site></app-login-site> -->
-      <!-- <app-match-list></app-match-list> -->
-      <footer class="footer__language">
-        <!-- <div class="bg-dark" style="text-align:center;color: #fff">  
-          <select #langSelect (change)="changeLang(langSelect.value)">  
-              <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>  
-          </select>  
-        </div>   -->
+      <main class="main__site">
+        <button class="btnMenu btnMenu-show" mat-button (click)="drawer.toggle()">
           
-    
-      </footer>
+        </button>
+        <app-menu-site></app-menu-site>
+        <router-outlet></router-outlet>
+
+    </main>
+
+      <app-footer-site></app-footer-site>
     </div>
   
-    <div>
-      <app-nav-footer></app-nav-footer>
-    </div>
+    <app-nav-footer></app-nav-footer>
   </mat-drawer-container>

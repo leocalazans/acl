@@ -28,6 +28,7 @@ import {MatSortModule} from '@angular/material/sort';
 import { TableResultComponent } from './ranking/table-result/table-result.component';
 import { BannerHomeComponent } from './home-content/banner-home/banner-home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { PartnershipModule } from './partnership/partnership.module';
 
 export const createTranslateLoader = (http:HttpClient) =>{
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -66,7 +67,8 @@ export const createTranslateLoader = (http:HttpClient) =>{
         deps:[HttpClient]
       }
 
-    })
+    }),
+    PartnershipModule
   ]
 })
 export class PagesModule { }

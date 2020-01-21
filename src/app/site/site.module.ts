@@ -114,6 +114,7 @@ import { ScoreComponent } from './score/score.component';
 // import { PlayersRegisterComponent } from './pages/register-site/players/players/players.component';
 // import { UserRegisterComponent } from './pages/register-site/users/user/user.component';
 import { NavFooterComponent } from './shared/footer/nav-footer.component';
+import { FooterSiteComponent } from './shared/footer/footer-site/footer-site.component';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { SiteComponent } from './site.component';
@@ -138,7 +139,7 @@ export const createTranslateLoader = (http:HttpClient) =>{
     NavFooterComponent,
     SiteComponent,
     // GooglePlacesComponent
-    
+    FooterSiteComponent,
   ],
   imports: [
     BrowserModule,

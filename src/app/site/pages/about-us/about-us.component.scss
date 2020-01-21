@@ -118,4 +118,17 @@ ol li{
             justify-content: flex-start;
         }
     }
+    .card__table{
+        max-width: 75%;
+        h4{
+            color: #04df26;
+            background: #4b4b4b;
+            margin: 0px;
+            padding: 15px 0px ;
+            text-align: center;
+        }
+        img{
+            width: 100%;
+        }
+    }
 }

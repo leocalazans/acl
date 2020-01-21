@@ -15,6 +15,9 @@ const routes: Routes = [
   { path: 'register',    
     loadChildren: ()=> import('./register-site/register.module').then(c => c.RegisterModule)
   },
+  { path: 'partnership',    
+    loadChildren: ()=> import('./partnership/partnership.module').then(c => c.PartnershipModule)
+  },
   
 
 
