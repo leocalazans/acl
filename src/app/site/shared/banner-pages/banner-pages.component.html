@@ -1,0 +1,13 @@
+
+<section class="banner__pages" [style.backgroundImage]="'url('+ getBkUrl()+ ')'" *ngFor="let banner of banner">
+    <div class="default-container" >
+        <div class="content__text-banner" >
+            <h2>
+                {{banner.nome}}
+            </h2>  
+            <nav>
+                <a href="{{banner.dead_link}}">{{banner.dead}} > </a> <a href="#">{{banner.nome}}</a>
+            </nav>
+        </div>
+    </div>
+</section>

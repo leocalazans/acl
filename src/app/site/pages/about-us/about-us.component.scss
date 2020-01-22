@@ -1,12 +1,11 @@
 
 .about{
-    // background-color: red;
     display: flex;
     flex-direction: column;
     padding-top: 20px;
     max-width: 80%;
     h1{
-        margin: 50px 0;
+        margin: 20px 0;
         font-size: 2em;
         color: #04df26;
     }
@@ -73,6 +72,95 @@ ol li{
         font-weight: 500;
         font-size: 1.2em;
         margin-left: -1em;
+    }
+}
+.bg_light{
+    background-color: rgb(240, 240, 240);;
+}
+.table-section{ 
+    padding: 45px 0;
+    background-color: #04df26;
+    .content-title{
+        width: 100%;
+    }
+    .default-container{
+        flex-direction: column;
+    }
+
+}
+#tabAbout{
+    width: 100%;
+    .tabs{
+        width: 100%;
+        .mat-tab-labels{
+            background-color: green!important;
+
+        }
+    }
+    .mat-tab-labels{
+        background-color: green!important;
+    }
+
+    // ::ng-deep.mat-tab-label.mat-tab-label-active:not(.mat-tab-disabled),
+    // ::ng-deep.mat-tab-label.mat-tab-label-active.cdk-keyboard-focused:not(.mat-tab-disabled) {
+    // background-color: green;
+
+    // color: white;
+    // opacity: 1;
+    // }
+    ::ng-deep .mat-tab-list .mat-tab-labels  {
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    ::ng-deep .mat-tab-list  .mat-ink-bar{
+        display: none;
+    }
+    ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label {
+        color: #04df26;
+        background-color: #fff;
+        opacity: 1;
+        width: 32%;
+        border-radius: 7px;
+        font-size: 1.5em;
+    }
+    ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+        color: #04df26;
+        background-color: #414142;
+    }
+
+    .content_specfics-table{
+        width: 80%;
+        .title{
+            width:100%;
+            background-color: #414142;
+            padding: 10px;
+            font-size: 1.4em;
+            color: #04df26;
+            text-transform: uppercase;
+            border-radius: 5px;
+        }
+        .specfics-table{
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            margin-top: 5px;
+            padding: 10px;
+            justify-content: space-between;
+            border-radius: 5px;
+            div:not(:last-child){
+                border-right: #41414277 solid 1px;
+                padding-right: 8px;
+            }
+        }
+    }
+}
+.content__expand{
+    padding: 45px 0px;
+
+    .title__green{
+        color: #04df26;
+        font-weight: 700;
     }
 }
 @media(min-width: 720px){

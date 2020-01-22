@@ -23,16 +23,20 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSortModule} from '@angular/material/sort';
+import { MatTabsModule } from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 import { TableResultComponent } from './ranking/table-result/table-result.component';
 import { BannerHomeComponent } from './home-content/banner-home/banner-home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PartnershipModule } from './partnership/partnership.module';
+// import { BannerPagesComponent } from './../shared/banner-pages/banner-pages.component';
 
 export const createTranslateLoader = (http:HttpClient) =>{
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }; 
+import { BannerPagesModule } from './../shared/banner-pages/banner-pages.module';
 
 @NgModule({
   declarations: [
@@ -42,10 +46,13 @@ export const createTranslateLoader = (http:HttpClient) =>{
     HomeContentComponent,
     BannerHomeComponent,
     TableResultComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    // BannerPagesComponent
   ],
+  // exports:[BannerPagesComponent],
   imports: [
     CommonModule,
+    MatExpansionModule,
     MatInputModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -59,6 +66,7 @@ export const createTranslateLoader = (http:HttpClient) =>{
     HttpClientModule,
     MatTableModule,
     MatSortModule,
+    MatTabsModule,
     MatPaginatorModule,
     TranslateModule.forRoot({
       loader:{
@@ -68,7 +76,8 @@ export const createTranslateLoader = (http:HttpClient) =>{
       }
 
     }),
-    PartnershipModule
+    PartnershipModule,
+    BannerPagesModule
   ]
 })
 export class PagesModule { }

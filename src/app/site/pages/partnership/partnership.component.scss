@@ -1,6 +1,20 @@
+@keyframes skewX {
+    0% {
+        transform: scaleX(-1);
+
+
+    }
+  
+    100% {
+        transform: scaleX(1);
+
+
+    }
+  }
+
 .partnership-program{
     height: auto;
-    padding: 35px 0;
+    padding: 55px 0;
 }
 .default-container{
     flex-direction: column;
@@ -16,6 +30,7 @@
 .col-50{
     display: flex;
     width: 100%;
+    flex-direction: column;
 
 }
 .col-40, .col-60, .col-70{
@@ -54,12 +69,24 @@ h2{
     display: flex;
     flex-wrap: wrap;
     li{
-        width: 50%;
+        width: 25%;
         list-style: none;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         margin-top: 10px;
+        color: #414142;
+        cursor: pointer;
+        svg{
+            transition: animation 0.1s ease-out;
+        }
+        &:hover {
+            color: #04df26;
+            svg{
+            animation: skewX 0.3s ease-out;
+            transition: animation 0.3s ease-out;
+        }
+        }
         svg{
             max-width: 30%;
         }
@@ -73,6 +100,32 @@ h2{
             font-weight: 600;
         }
     }
+}
+section.divider{
+    width: 100%;
+    // background-color: #04df26;
+    // padding: 45px 0px;
+    // color: #fff;
+    // background: linear-gradient(to left, rgba(245,245,245,1) 0%, rgba(245,245,245,1) 50%, #04df26 50%, #04df26 100%);
+    // background-image: url(../../../../assets/images/VETOR_VERDE.png);
+    // background-repeat: no-repeat;
+    // background-position: 100px 100px;
+    // background-position: 417px 37px;
+    position: relative;
+    z-index: 33;
+    &:after{
+        content: " ";
+        width:25%;
+        height: 418px;
+        top: 155px;
+        display: inline-block;
+        position: absolute;
+        background-color: #04df26;
+        left: 0px;
+        z-index: -1;
+
+    }
+
 }
 @media(min-width:1024px){
     .col-50{
@@ -98,18 +151,114 @@ h2{
         margin-left: 30%;
     }
     section.divider{
-        width: 100%;
-        height: 300px;
-        background-color: #04df26;
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2{
+            // color:#fff;
+        }
+        h3{
+            margin: 0;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+        ol, ul{
+            padding: 0;
+            li{
+                font-size: 1.3em;
+                font-weight: 600;
+                // opacity: 0.7;
+                list-style: none;
+                p span{
+                    display: inline-block;
+                    width: 50px;
+                    opacity: 1;
+                    height: auto;
+                    background-color: #04df26;
+                    background-color: #414142;
+                    color: #fff;
+                    text-align: center;
+                    transform: skew(30deg);
+                    margin-right: 40px;
+                    margin-left: 5px;
+                    position: relative;
+                    &:before{
+                        content: " ";
+                        width: 7px;
+                        height: 100%;
+                        position: absolute;
+                        right: -12px;
+                        display: inline-block;
+                        background-color: #04df26;
+                    }
+                    &:after{
+                        content: " ";
+                        width: 7px;
+                        height: 100%;
+                        position: absolute;
+                        right: -24px;
+                        display: inline-block;
+                        background-color: #04df26;
+                    }
+                    i{
+                        display: inline-block;
+                        transform: skew(-20deg);
+                    }
+                }
+            }
+        }
+        .content__text{
+            padding: 45px 25px;
+        }
+    }
+    .content_player-fut{
+        height: 100%;
+        background-image: url(../../../../assets/images/VETOR_VERDE.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        background-position: 113% center;
+        img{
+            max-width: 100%;
+            height: auto;
+            transform:scaleX(-1);
+        }
     }
 
 }
 
 section.requiriments{
-    padding:50px 0px;
+    padding: 50px 0px;
     position: relative;
     z-index: 3333;
+    min-height: 60vh;
+    display: flex;
+    h2{
+        text-align: center;
+        color: #04df26;
+        margin-bottom: 40px;
+        font-weight: 600;
+    }
     p{
+        max-width: 60%;
+        margin: 0 auto;
+        font-family: 'Graphik-Regular','Gotham SSm A','Gotham SSm B','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+        text-rendering: optimizeLegibility;
+        line-height: 1.5;
+        color: #414142;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+    a{
+        color: #04df26;
+        text-decoration: none;
+        text-rendering: optimizeLegibility;
+        text-align: center;
+        display: block;
+        margin: 15px auto;
+        font-size: 1rem;
     }
     &:before{
         content: " ";

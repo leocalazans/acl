@@ -218,7 +218,7 @@ export const createTranslateLoader = (http:HttpClient) =>{
   ],
   exports:[
     MatTableModule,
-    SiteComponent
+    SiteComponent,
   ],
   providers: [AuthenticationService, { provide: FirestoreSettingsToken, useValue: {}}],
   bootstrap: [AppComponent]
