@@ -28,8 +28,10 @@
 
 .content__logo{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    flex-direction: column;
 }
 select.select.Language{
     background-color:#111111;
@@ -116,7 +118,19 @@ select.select.Language{
     }
 }
 
-
+.content__nav-footer ul{
+    &:first-child{
+        margin-top: 20px;
+    }
+     li a{
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        opacity: 0.60;
+    }
+}
 
 @media(min-width:1250px){
     .footer_site{
@@ -143,6 +157,7 @@ select.select.Language{
                             line-height: 1.7em;
                             color: #909090;
                             text-transform: capitalize;
+                            text-align: left;
                         }
                     }
                 }
@@ -156,6 +171,9 @@ select.select.Language{
     }
     .content__logo{
         width:55%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
     .content__menu{
         width:45%;
