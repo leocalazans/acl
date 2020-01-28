@@ -1,0 +1,130 @@
+.default-container{
+    flex-direction: column;
+}
+.comming-soon{
+    width: 100%;
+    min-height: 70vh;
+    background-image: url(./../../../../assets/images/comming_bg.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index:33 ;
+    &:before{
+        content: " ";
+        width: 50%;
+        height: 100%;
+        left: 0px;
+        display: block;
+        position: absolute;
+        opacity: 88%;
+        background-color: #404041 ;
+        z-index:1 ;
+    }
+    &:after{
+        content: " ";
+        width: 50%;
+        height: 100%;
+        right: 0px;
+        display: block;
+        position: absolute;
+        opacity: 88%;
+        background-color: #49d732;
+        z-index:1 ;
+    }
+    &.site-disable{
+        position: fixed;
+        top: 0px;
+        height: 100vh;
+        z-index: 9999;
+        overflow: hidden;
+    }
+    p{  
+        font-family: "Roboto";
+        width: 50%;
+        color: #fff;
+        position: relative;
+        font-weight: 400;
+        font-size: 1.2em;
+        line-height: 1.1em;
+        z-index: 2;
+    }
+}
+
+// hack underconstruction
+.main__site[_ngcontent-pgd-c1]{
+    overflow-x: auto!important;
+
+}
+.content_title {
+    position: relative;
+    z-index: 2;
+    h1{
+        color:#fff;
+        font-size: 2.8em;
+        font-family: 'Russo One';
+        text-transform: uppercase;
+        margin: 0;
+        margin-top: 15px;
+        font-weight: 300;
+        margin-right: -5px;
+    }
+}
+.sub__title{
+    color: #404041;
+    font-weight: bold;
+    background-color: #fff;
+    width: auto;
+    padding:5px 10px;
+    text-transform: uppercase;
+    margin: 5px auto;
+    display: inline-flex;
+    text-align: center;
+}
+.content_logo{
+    position: relative;
+    z-index: 2;
+}
+.content-news{
+    position: relative;    
+    z-index: 2;
+    width: 70%;
+    margin-top: 20px;
+    input{
+        width: 100%;
+        padding:5px 10px;
+        &::placeholder{
+            font-family: "Russo one";
+            color: #404041;
+            font-weight: 600;
+        }
+    }
+    button{
+        color: #49d732;
+        width: 25px;
+        height: 100%;
+        display: block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        padding-left: 0px;
+        border: none;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
+@media(min-width: 720px){
+    .content_title {
+
+        h1{
+            font-size: 3.8em;
+
+        }
+    }
+}

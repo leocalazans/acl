@@ -37,6 +37,8 @@ export const createTranslateLoader = (http:HttpClient) =>{
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }; 
 import { BannerPagesModule } from './../shared/banner-pages/banner-pages.module';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { BannerPagesModule } from './../shared/banner-pages/banner-pages.module'
     BannerHomeComponent,
     TableResultComponent,
     AboutUsComponent,
+    ComingSoonComponent,
+    NotFoundComponent,
     // BannerPagesComponent
   ],
   // exports:[BannerPagesComponent],

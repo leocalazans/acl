@@ -35,6 +35,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminModule } from './admin/admin.module';
 import { PartnershipComponent } from './pages/partnership/partnership.component';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { PartnershipComponent } from './pages/partnership/partnership.component'
     AppComponent,
     DashboardComponent,
     PartnershipComponent,
+    ComingSoonComponent,
    
   ],
   imports: [

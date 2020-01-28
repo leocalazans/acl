@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 import { RankingComponent } from './ranking/ranking.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { LoginSiteComponent } from './login-site/login-site.component';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 
 const routes: Routes = [
   
@@ -18,6 +20,10 @@ const routes: Routes = [
   { path: 'partnership',    
     loadChildren: ()=> import('./partnership/partnership.module').then(c => c.PartnershipModule)
   },
+  // {path: '404', component: NotFoundComponent},
+  // {path: '* *', redirectTo: '/404'}
+  {path: 'coming-soon',  component: ComingSoonComponent},
+  {path: '**',  component: NotFoundComponent}
   
 
 
