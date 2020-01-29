@@ -29,7 +29,6 @@ export class ComingSoonComponent implements OnInit {
   save() {
     this.RegisterService.createCustomer(this.usersite);
     this.usersite = new Usersite();
-    this.received = "we receive your email we will notify you when everything is ready";
-    alert('foi');
+    this.received = "We receive your email we will notify you when everything is ready.";
   }
 }

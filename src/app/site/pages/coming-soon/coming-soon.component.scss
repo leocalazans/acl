@@ -31,7 +31,13 @@
 .comming-soon{
     width: 100%;
     min-height: 70vh;
-    background-image: url(./../../../../assets/images/comming_bg.png);
+    background-color: #404041;
+    background-image: url(./../../../../assets/images/comming_bg.webp);
+    // @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    //     #selector {
+    //         background: red;
+    //     }
+    // }
     background-size: cover;
     background-position: center;
     display: flex;
