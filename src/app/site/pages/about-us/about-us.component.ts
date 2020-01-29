@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
   banner: Object[];
-
+  panelOpenState: boolean;
   constructor() {
     this.banner = [
       {
