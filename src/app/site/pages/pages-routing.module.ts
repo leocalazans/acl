@@ -20,10 +20,10 @@ const routes: Routes = [
   { path: 'partnership',    
     loadChildren: ()=> import('./partnership/partnership.module').then(c => c.PartnershipModule)
   },
-  // {path: '404', component: NotFoundComponent},
-  // {path: '* *', redirectTo: '/404'}
-  {path: 'coming-soon',  component: ComingSoonComponent},
-  {path: '**',  component: NotFoundComponent}
+  {path: '404', component: NotFoundComponent},
+  {path: '**', redirectTo: '/404'}
+  // {path: 'coming-soon',  component: ComingSoonComponent},
+  // {path: '**',  component: NotFoundComponent}
   
 
 

@@ -38,168 +38,112 @@
                 </div>
             </div>
             
-            <!-- <div class="row">
-                <div class="col-6">
-                    <div class="card__table">
-                        <h4>
-                            ALUMINUM PRO#1
-                        </h4>
-                        <img src=" https://via.placeholder.com/400x400/111111/ffffff?Text=Banner" alt="ALUMINUM ">
-                    </div>
-                </div>
-                
-                <div class="col-6">
-                    <div class="card__table">
-                        <h4>
-                            FOLDABLE #1
-                        </h4>
-                        <img src=" https://via.placeholder.com/400x400/111111/ffffff?Text=Banner" alt="FOLDABLE">
-                    </div>
-                </div>
-            </div>
+        </article>
+    </div>
+</section>
+<section class="table-section">
+    <div class="default-container">
+        <div class="content-title">
+            <h2>
+                The Table
+            </h2>
             
-            
-            <div class="row">
-                <div class="col-8 block-center">
-                    <div class="c_box-bk-title">
-                        The tables measurements are as follow:
-                    </div>
-                    <div class="col-3-fix">
-                        <strong>
-                            9.84 ft in length
-                        </strong>
-                    </div>
-                    <div class="col-3-fix">
-                        <strong>
-                            4.92 ft in width
-                        </strong>
-                    </div>
-                    <div class="col-3-fix">
-                        <strong>
-                            23.62 in highest point
-                        </strong>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <h2>
-                        The Ball
-                    </h2>
-                    <p>
-                        The AirSoccer ball must be spherical (soccer ball), of a circumference of not more than 28 in and not less than 27 in and not more than 16oz and not less than 14oz in weight at the start of the match.                </p>
-                        <p>
-                            Air pressure of the ball in competition equals to 0.6 – 1.1 atmosphere (600 – 1,100g/cm2 ) at sea level (8.5lbs/sq in – 15.6lbs/sq in).
-                        </p>
-                    </div>
-                    <div class="col-12">
-                        <h2>
-                            The Net
-                        </h2>
-                        <ol>
-                            <li> The net must be permanently fixed to the AirSoccer table.</li>
-                            <li> The net must be made out of the following materials: Translucent acrylic, reinforced 
-                                plastic material.</li>
-                                <li> The size specification of the net: A. Width: 1700mm B. Thickness: 20mm C. Height: 140mm 
-                                    (measured from the surface of the AirSoccer table).
-                                </li>
-                            </ol>
-                            <p>
-                                Our net will have to be very resistant and also very stable because the chances of it getting hit along a match are very high.                  
-                            </p>
-                            <p>
-                                The net is recommended to be transparent and also with rounded corners and rubber protection. 
-                            </p>
-                        </div>
-                    </div> -->
-                    
-                    
-                </article>
-            </div>
-        </section>
-        <section class="table-section">
-            <div class="default-container">
-                <div class="content-title">
-                    <h2>
-                        The Table
-                    </h2>
-                    
-                </div>
-                
-                <div id="tabAbout">
-                    
-                    <mat-tab-group class="tabs">
-                        <mat-tab label="ALUMINUM PRO#1" class="tab"> 
-                            <img src="https://picsum.photos/id/870/1250/500?grayscale&blur=2
-                            " width="100%" alt="">
-                            <h4>
-                                Aluminium Pro#1
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dicta minus, velit, ipsa officiis repellat sed possimus voluptas optio ex vitae expedita consequuntur repudiandae laudantium amet eligendi? Quisquam libero at sit sunt accusamus repellendus, quam nam, necessitatibus atque ea esse eaque. Possimus laborum itaque fugit.
-                            </p>
-                            <div class="content_specfics-table">
-                                <div class="title">
-                                    The table measurements as fallows:
-                                </div>
-                                <div class="specfics-table">
-                                    <div>
-                                        9.84 ft in lenght
-                                    </div>
-                                    <div>
-                                        4.92 ft in width
-                                    </div>
-                                    <div>
-                                        23.62  in highest point
-                                    </div>
-                                </div>
-                            </div>
-                        </mat-tab>
-                        
-                        <mat-tab label="Second"> 
-                            Content 2 
-                        </mat-tab>
-                        
-                        <mat-tab label="Third">
-                            Content 3 
-                        </mat-tab>
-                    </mat-tab-group>
-                </div>
-                
-            </div>
-        </section>
-        
-        <section class="content__expand">
-            <div class="default-container">
-                
-                <mat-accordion>
-                    <mat-expansion-panel class="expandTitle">
-                        <mat-expansion-panel-header>
-                            <mat-panel-title class="title__green">
-                                The Ball
-                            </mat-panel-title>
-                           
-                        </mat-expansion-panel-header>
-                        
-                        <div class="div">
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, laudantium ullam enim asperiores dolor ipsum commodi vitae quam maxime odio nihil quis quo nisi perspiciatis!
-                            </p>
-                        </div>
-                    </mat-expansion-panel>
-
-                    <mat-expansion-panel (opened)="panelOpenState = true"
-                    (closed)="panelOpenState = false" class="expandTitle">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title class="title__green">
-                            The Net
-                        </mat-panel-title>
-                        
-                    </mat-expansion-panel-header>
-                    <p>I'm visible because I am open</p>
-                </mat-expansion-panel>
-            </mat-accordion>
         </div>
-    </section>
+        
+        <div id="tabAbout">
+            
+            <mat-tab-group class="tabs">
+                <mat-tab label="ALUMINUM PRO#1" class="tab"> 
+                    <div class="cotnent_slider-tab">
+                        <div class="content_img">
+                            <img src="{{this.slider_active.Url}}
+                            " width="100%" alt="">
+                           
+                        </div>
+                        <div class="content_nav">
+                            <img src="../../../../assets/images/logo-airsoccer.png" class="logo" alt="logo">
+                            <h5>
+                                Aluminium Pro#1
+                            </h5>
+
+                            <div class="thumbs">
+                                <!-- <div>
+                                    <img src="https://via.placeholder.com/100/000000/FFFFFF/?text=airsoccerleague.com" alt="Thumb">
+                                </div> -->
+                                
+                                    <img  *ngFor="let item of sliders;" src="{{item.Url }}" (click)="next(item.leng)" alt="Thumb" class="thumb">
+                                 
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>
+                        Aluminium Pro#1
+                    </h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dicta minus, velit, ipsa officiis repellat sed possimus voluptas optio ex vitae expedita consequuntur repudiandae laudantium amet eligendi? Quisquam libero at sit sunt accusamus repellendus, quam nam, necessitatibus atque ea esse eaque. Possimus laborum itaque fugit.
+                    </p>
+
+                    <div class="content_specfics-table">
+                        <div class="title">
+                            The table measurements as fallows:
+                        </div>
+                        <div class="specfics-table">
+                            <div>
+                                9.84 ft in lenght
+                            </div>
+                            <div>
+                                4.92 ft in width
+                            </div>
+                            <div>
+                                23.62  in highest point
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+                
+                <mat-tab label="Second"> 
+                    Content 2 
+                </mat-tab>
+                
+                <mat-tab label="Third">
+                    Content 3 
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+        
+    </div>
+</section>
+
+<section class="content__expand">
+    <div class="default-container">
+        
+        <mat-accordion>
+            <mat-expansion-panel class="expandTitle">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="title__green">
+                        The Ball
+                    </mat-panel-title>
+                    
+                </mat-expansion-panel-header>
+                
+                <div class="div">
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, laudantium ullam enim asperiores dolor ipsum commodi vitae quam maxime odio nihil quis quo nisi perspiciatis!
+                    </p>
+                </div>
+            </mat-expansion-panel>
+            
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false" class="expandTitle">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="title__green">
+                    The Net
+                </mat-panel-title>
+                
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+</section>

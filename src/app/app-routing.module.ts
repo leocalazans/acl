@@ -8,9 +8,9 @@ import { ComingSoonComponent } from './site/pages/coming-soon/coming-soon.compon
 
 const routes: Routes = [
   { 
-    path: '**',  
+    path: '',  
     pathMatch: 'full',  
-    component: ComingSoonComponent,
+    component: HomeContentComponent,
   },
   
   { 
