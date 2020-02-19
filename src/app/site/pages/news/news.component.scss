@@ -1,0 +1,8 @@
+.default-container{
+    flex-direction: column;
+
+
+    @media(max-width:720px){
+        padding: 0 45px;
+    }
+}
