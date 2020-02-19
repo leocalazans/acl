@@ -14,7 +14,9 @@ export class AboutUsComponent implements OnInit {
   slider_active = {
     Url: './../../../../assets/images/protable/1.png'
   }
-  
+  slider_active_two ={
+    Url: './../../../../assets/images/protable/1.png'
+  }
   sliders = [
     { 
       Url: './../../../../assets/images/protable/1.png',
@@ -34,30 +36,74 @@ export class AboutUsComponent implements OnInit {
     },
   ]
   
+  sliders_two = [
+    { 
+      Url: './../../../../assets/images/foldable/Img1.png',
+      leng: 0  
+    },
+    { 
+      Url: './../../../../assets/images/foldable/Img2.png',
+      leng: 1  
+    },
+    { 
+      Url: './../../../../assets/images/foldable/Img3.png',
+      leng: 2  
+    },
+    { 
+      Url: './../../../../assets/images/foldable/Img4.png',
+      leng: 3  
+    },
+  ]
+  
   // slider_active 
   
   constructor() {
     this.banner = [
       {
-        nome: 'What´s AirSoccer ?',
+        nome: 'What´s AirSoccer?',
         backgorund: './../../../../assets/images/bg__white.jpg',
         dead: 'Home',
         dead_link: '/home'
       }]
     }
     
-    next(length, alvo) {
+    next(length, oalvo) {
       let i ;
       
-      this.sliders.forEach(function (Slider, index) {
-        if (length == index) {
-          alvo = Slider.Url;
-          i = index;
-          return
-        }
-      });
+      oalvo = parseInt(oalvo);
+      var alvo;
+      let slide_this = false ;
+ 
+      if(oalvo == 2){
+        this.sliders_two.forEach(function (Slider, index) {
+          if (length == index) { 
+            alvo = Slider.Url;
+            if(oalvo == 2){
+              slide_this = true;
+            }else{
+            }
+            i = index;
+            return
+          }
+        });
+      }else{
+        this.sliders.forEach(function (Slider, index) {
+          if (length == index) { 
+            alvo = Slider.Url;
+            if(oalvo == 2){
+              slide_this = true;
+            }
+            i = index;
+            return
+          }
+        });
+      }
       
-      this.slider_active.Url = alvo;
+      if (slide_this) {
+        this.slider_active_two.Url = alvo;
+      } else{
+        this.slider_active.Url = alvo;
+      }
       this.currentSlide = i;
     }
     
@@ -71,8 +117,14 @@ export class AboutUsComponent implements OnInit {
       let i;
       let cSlider = this.currentSlide;
       
- 
+      
       this.sliders.forEach(function (Slider, index) {
+        if (cSlider+1  == index) {
+          OSlier = Slider.Url;
+        }
+      });
+      
+      this.sliders_two.forEach(function (Slider, index) {
         if (cSlider+1  == index) {
           OSlier = Slider.Url;
         }

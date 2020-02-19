@@ -32,14 +32,16 @@
     }
     &:hover{
         &:after{
-            height: 80%;
+            height: 100%;
         }
     }
     img:first-of-type{
         position: absolute;
         z-index: 2; 
-        min-width: 120%;
+        min-width: 125%;
+        max-width: 125%;
         height: auto;
+        top:0px;
     }
     h2 ,p ,a {
         position: relative;
@@ -83,6 +85,7 @@
     height: 100%;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 15px;
     .content-news-img{
         height: 48.5%;
     }
@@ -101,6 +104,7 @@
     }
     .content__large-imgs{
         width: 49%;
+        margin-top: 0px;
     }  
     .content-news-img{
         margin-top: 0px;

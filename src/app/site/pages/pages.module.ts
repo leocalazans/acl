@@ -39,9 +39,11 @@ export const createTranslateLoader = (http:HttpClient) =>{
 import { BannerPagesModule } from './../shared/banner-pages/banner-pages.module';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TournamentsComponent } from './tournaments/tournaments.component';
 // import { NewsComponent } from './news/news.component';
-import { SingleNewsComponent } from './news/single-news/single-news.component';
+// import { SingleNewsComponent } from './news/single-news/single-news.component';
 // import { BannerNewsComponent } from './news/banner-news/banner-news.component';
+import { OwlModule } from 'ngx-owl-carousel';  
 
 @NgModule({
   declarations: [
@@ -54,8 +56,9 @@ import { SingleNewsComponent } from './news/single-news/single-news.component';
     AboutUsComponent,
     ComingSoonComponent,
     NotFoundComponent,
+    TournamentsComponent,
     // NewsComponent,
-    SingleNewsComponent,
+    // SingleNewsComponent,
     // BannerNewsComponent,
     // BannerPagesComponent
   ],
@@ -78,6 +81,7 @@ import { SingleNewsComponent } from './news/single-news/single-news.component';
     MatSortModule,
     MatTabsModule,
     MatPaginatorModule,
+    OwlModule ,
     TranslateModule.forRoot({
       loader:{
         provide: TranslateLoader,

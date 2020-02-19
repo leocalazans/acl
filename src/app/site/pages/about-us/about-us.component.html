@@ -56,22 +56,18 @@
                 <mat-tab label="ALUMINUM PRO#1" class="tab"> 
                     <div class="cotnent_slider-tab">
                         <div class="content_img">
-                            <img src="{{this.slider_active.Url}}
-                            " width="100%" alt="">
-                           
+                            <img src="{{this.slider_active.Url}}" width="100%" alt="">
                         </div>
                         <div class="content_nav">
                             <img src="../../../../assets/images/logo-airsoccer.png" class="logo" alt="logo">
                             <h5>
-                                Aluminium Pro#1
+                                Aluminum Pro#1
                             </h5>
 
                             <div class="thumbs">
-                                <!-- <div>
-                                    <img src="https://via.placeholder.com/100/000000/FFFFFF/?text=airsoccerleague.com" alt="Thumb">
-                                </div> -->
+
                                 
-                                    <img  *ngFor="let item of sliders;" src="{{item.Url }}" (click)="next(item.leng)" alt="Thumb" class="thumb">
+                                    <img  *ngFor="let item of sliders;" src="{{item.Url }}" (click)="next(item.leng,1)" alt="Thumb" class="thumb">
                                  
                             </div>
                         </div>
@@ -102,8 +98,50 @@
                     </div>
                 </mat-tab>
                 
-                <mat-tab label="Second"> 
-                    Content 2 
+                <mat-tab label="FOLDABLE #1"> 
+                    <div class="cotnent_slider-tab">
+                        <div class="content_img">
+                            <img src="{{this.slider_active_two.Url}}" width="100%" alt="">
+                           
+                        </div>
+                        <div class="content_nav">
+                            <img src="../../../../assets/images/logo-airsoccer.png" class="logo" alt="logo">
+                            <h5>
+                                Foldable #1
+                            </h5>
+
+                            <div class="thumbs">
+
+                                
+                                    <img  *ngFor="let item of sliders_two;" src="{{item.Url}}" (click)="next(item.leng,2)" alt="Thumb" class="thumb">
+                                 
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>
+                        Foldable #1
+                    </h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dicta minus, velit, ipsa officiis repellat sed possimus voluptas optio ex vitae expedita consequuntur repudiandae laudantium amet eligendi? Quisquam libero at sit sunt accusamus repellendus, quam nam, necessitatibus atque ea esse eaque. Possimus laborum itaque fugit.
+                    </p>
+
+                    <div class="content_specfics-table">
+                        <div class="title">
+                            The table measurements as fallows:
+                        </div>
+                        <div class="specfics-table">
+                            <div>
+                                9.84 ft in lenght
+                            </div>
+                            <div>
+                                4.92 ft in width
+                            </div>
+                            <div>
+                                23.62  in highest point
+                            </div>
+                        </div>
+                    </div>
                 </mat-tab>
                 
                 <mat-tab label="Third">
