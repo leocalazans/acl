@@ -14,10 +14,9 @@ const routes: Routes = [
   },
   
   { 
-    path: 'dashboard', 
-    component: DashboardComponent,  
-    outlet: 'adm' 
-  }
+    path: 'mysoccer',    
+    loadChildren: ()=> import('./admin/admin.module').then(c => c.AdminModule)
+  },
 
 ];
 

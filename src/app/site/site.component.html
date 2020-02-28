@@ -1,11 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <style>
     :host {
@@ -17,17 +9,12 @@
       -moz-osx-font-smoothing: grayscale;
     }
   
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1, h2, h3, h4, h5, h6 {
       margin: 8px 0;
     }
   </style>
   
-  <mat-drawer-container class="content-container " >
+  <mat-drawer-container class="content-container " *ngIf="!(authenticationService.userData | async)" >
     <mat-drawer #drawer class="js_drawer content-sidenav" mode="side">
       <button class="btnMenu" mat-button (click)="drawer.toggle()">
         <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>
@@ -171,3 +158,32 @@
   
     <app-nav-footer></app-nav-footer>
   </mat-drawer-container>
+
+  <div *ngIf="authenticationService.userData | async" class="content__dashboard" [hidden]="submitted">
+    <div class="navSite">
+      <aside>
+        <ul class="list_aside" >
+          <li class="content-perfil">
+            <a href="#">
+              <div class="content-img">
+                <img src="https://via.placeholder.com/50" alt="">
+              </div>
+              <div class="named-perfil">
+                <h2>
+                    {{ (authenticationService.userData | async)?.email }}
+                </h2>
+                <p>
+                  lorem ipsum
+                </p>
+              </div> 
+            </a>
+          </li>
+          <li class="dashList"><a href="#"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> Home</a></li>
+          <li class="dashList"><a   routerLink="mysoccer/tournamets"><mat-icon aria-hidden="false" aria-label="Example home icon">emoji_events</mat-icon>  Tournaments</a></li>
+        </ul>
+      </aside>
+    </div>  
+    <div class="dash-content">
+        <router-outlet ></router-outlet>
+    </div>    
+</div>

@@ -76,12 +76,16 @@ export class AuthenticationService {
     return this.AuthLogin(new auth.FacebookAuthProvider());
   }
 
+
+  
+
   AuthLogin(provider) {
     return this.angularFireAuth.auth.signInWithPopup(provider)
     .then((result) => {
         var user = result.user;
         console.log('You have been successfully logged in!');
         (user.email.length) ? sessionStorage.setItem('userMail', user.email): null;
+        (user.email.length) ? localStorage.setItem('userMail', user.email): null;
 
     }).catch((error) => {
         console.log(error);
