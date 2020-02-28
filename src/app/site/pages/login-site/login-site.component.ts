@@ -41,7 +41,6 @@ export class LoginSiteComponent {
   goDash(){
     this.router.navigate(['/dashboard']);
   }
-
   // /Sign in with Google
   GoogleAuth() {
      return this.authenticationService.AuthLogin(new auth.GoogleAuthProvider());

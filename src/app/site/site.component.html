@@ -170,7 +170,7 @@
               </div>
               <div class="named-perfil">
                 <h2>
-                    {{ (authenticationService.userData | async)?.email }}
+                    {{ (authenticationService.userData | async)?.displayName }}
                 </h2>
                 <p>
                   lorem ipsum
@@ -181,6 +181,8 @@
           <li class="dashList"><a href="#"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> Home</a></li>
           <li class="dashList"><a   routerLink="mysoccer/tournamets"><mat-icon aria-hidden="false" aria-label="Example home icon">emoji_events</mat-icon>  Tournaments</a></li>
         </ul>
+        <button class="btn_aside" (click)="signOut()" *ngIf="authenticationService.userData | async">{{"Logout" | translate}}</button>
+
       </aside>
     </div>  
     <div class="dash-content">

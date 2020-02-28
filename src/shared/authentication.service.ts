@@ -57,7 +57,9 @@ export class AuthenticationService {
     this.angularFireAuth
       .auth
       .signOut();
-    this.router.navigate(['/']);
+      localStorage.clear();
+      sessionStorage.clear();
+      this.router.navigate(['/']);
 
   }  
 
@@ -73,7 +75,9 @@ export class AuthenticationService {
     .then((result) => {
         var user = result.user;
         console.log('You have been successfully logged in!');
+        console.log(user);
         (user.email.length) ? sessionStorage.setItem('userMail', user.email): null;
+        (user.displayName.length) ? sessionStorage.setItem('userName', user.displayName): null;
 
     }).catch((error) => {
         console.log(error);
