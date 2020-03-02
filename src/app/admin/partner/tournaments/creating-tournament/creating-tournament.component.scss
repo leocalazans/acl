@@ -1,0 +1,54 @@
+.add-library{
+    width:100%;
+    height: 350px;
+    background: #404040;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .mat-icon{
+        font-size: 200px;
+        width:200px;
+        height:200px;
+    }
+}
+
+.addform{
+    background: #41dd2c;
+    padding:10px;
+    border-radius:7px;
+    label{
+        display:block;
+        width:100%;
+        font-size: 14px;
+        color:#333;
+        font-weight: bold;
+        margin:10px 0px;
+    }
+    input, select{
+        border: none;
+        background:#fff;
+        &.adress{
+            margin-left:15px;
+        }
+    }
+    .form-select-{
+            margin-left:15px;
+    }
+    .form-select{
+    }
+    input#name_tournament{
+        border: none;
+        background:#fff;
+        width: 100%;
+        display:block;
+    }
+}
+.--flex{
+    display: flex;
+    flex-direction: row;
+    & div:not(:first-of-type){
+        padding-left:15px;
+    }
+}

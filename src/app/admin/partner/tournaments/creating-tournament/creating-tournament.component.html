@@ -1,0 +1,84 @@
+<div>
+    <h3>CREATE NEW TOURNAMENT</h3>
+    <div class="add-library"> 
+
+        <mat-icon aria-hidden="false" aria-label="Example home icon">library_add</mat-icon>
+        After completing the registration process, you will be asked to the ASL marketing department. The graphic material for dissemination   
+    </div>
+    
+    <h3>INSERT TOURNAMENT INFORMATIO'N</h3>
+
+    <div class="addform">
+        <div class="form-group">
+            <label for="my-input">NAME OF THE TOURNAMENT</label>
+            <input id="name_tournament" name="tournament" placeholder="Name" class="form-control" type="text" [(ngModel)]="tournament.championshipName" >
+        </div>  
+        <div class="form-group">
+            <label for="">LOCAL</label>
+            <select class="form-select"(selectionChange)="saveCountry($event)">>
+                <option disabled>Contry</option>
+                <option value="New York">New York</option>
+                <option value="Orlando">Orlando</option>
+                <option value="Florida">Florida</option>
+            </select> 
+            <select class="form-select-" (selectionChange)="saveCity($event)">
+                <option *ngFor="let city of citis" [value]="city.value"> 
+                    {{city.viewValue}}
+                </option>
+            </select> 
+
+            <input class=" form-control" type="text" name="" placeholder="Zipcode">
+            <input class="adress form-control" type="text" name="" placeholder="address">
+        </div>  
+
+        <div class="form-group">
+            <label for="">DATE OF EVENT</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker"  (dateChange)="addEvent('change', $event)">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>  
+
+        <div class="form-group --flex">
+            <div>
+                <label for="">MODE</label>
+                <select class="form-select">
+                    <option disabled>Doubles</option>
+                    <option >New York</option>
+                    <option >Orlando</option>
+                    <option >Florida</option>
+                </select>
+            </div>
+            <div>
+                <label for="">PLAYERS</label>
+                <select class="form-select">
+                    <option disabled>22</option>
+                    <option >30</option>
+                    <option >60</option>
+                    <option >90</option>
+                </select>
+            </div>
+            <div>
+                <label for="">N'TABLES</label>
+                <select class="form-select">
+                    <option disabled>4</option>
+                    <option >8</option>
+                </select>
+            </div>
+            <div>
+                <label for="">SET</label>
+                <select class="form-select">
+                    <option disabled>22</option>
+                    <option >22</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" (click)="save()" type="button">Text</button>
+        </div>
+    </div>
+</div>
+
+<div class="example-events">
+    <div *ngFor="let e of events">{{e}}</div>
+  </div>
