@@ -15,6 +15,12 @@ export class DashboardComponent implements OnInit {
   }   
   ngOnInit() {
     // (authenticationService.userData | async)? : ;
+    // var  aut_info = this.authenticationService.user.email;
+    // console.log(aut_info);
+    var  aut_info = localStorage.getItem('userMail');
+    var  aut_infos = sessionStorage.getItem('userMail');
+    console.log(aut_info);
+    console.log(aut_infos);
   }
 
 }

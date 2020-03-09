@@ -9,9 +9,9 @@ import { PartnershipComponent } from './partnership/partnership/partnership.comp
 const routes: Routes = [
   
   { path: '',    component: RegisterSiteComponent, },
-  { path: 'register/user',    component: UserRegisterComponent, },
-  { path: 'register/player',    component: PlayersRegisterComponent, },
-  { path: 'register/partnership',    component: PartnershipComponent, },
+  { path: 'user',    component: UserRegisterComponent, },
+  { path: 'player',    component: PlayersRegisterComponent, },
+  { path: 'partnership',    component: PartnershipComponent, },
 ];
 
 @NgModule({

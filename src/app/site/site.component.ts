@@ -33,6 +33,10 @@ export class SiteComponent {
     this.translate.use(language);  
   }  
 
+  signOut() {
+    this.authenticationService.SignOut();
+  }
+
   ngOnInit() {
 
   }
