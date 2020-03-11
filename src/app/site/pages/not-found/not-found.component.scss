@@ -1,0 +1,41 @@
+.content_not-found{
+    width: 100%;
+    min-height: 70vh;
+    background-image: url(./../../../../assets/images/404-image.png);
+    background-size: auto 100%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.content_title h1{
+    color:#fff;
+    font-size: 2em;
+    font-family: 'Russo One';
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 15px;
+}
+.sub__title {
+    margin-top: 13px;
+    margin-bottom: 75px;
+        a{
+        color:#fff;
+    }
+}
+.default-container{
+    position: relative;
+    min-height: 100%;
+    background-color:red;
+}
+@media(min-width: 720px){
+    .content_title {
+
+        h1{
+            font-size: 3.8em;
+
+        }
+    }
+}

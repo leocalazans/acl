@@ -1,0 +1,81 @@
+
+<div class="rankingContent">
+  
+  <h1>
+    World Ranking
+  </h1>
+  
+  <!-- <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+-->
+<div class="content-filter">
+  <mat-icon aria-hidden="false" aria-label="Search Search icon">search</mat-icon>
+  <input type="text" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Players">
+</div>
+
+<div class="">
+  <mat-table mat-table [dataSource]="dataSource" matSort>
+    
+    <!-- ID Column -->
+    <ng-container matColumnDef="Position">
+      <mat-header-cell class=" first__table" *matHeaderCellDef mat-sort-header> Pos. </mat-header-cell>
+      <mat-cell class="first__table" *matCellDef="let row"> {{row.global_position}} </mat-cell>
+    </ng-container>
+    
+    <!-- Name Column -->
+    <ng-container matColumnDef="userName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <span class="divider-y">  </span> Player </mat-header-cell>
+      <mat-cell class="text-light-color" *matCellDef="let row">
+        <span class="divider-y">  </span>
+        <span class="flag {{row.country}}"></span>
+        {{row.userName}} 
+      </mat-cell>
+    </ng-container>
+    
+    <!-- Progress Column -->
+    <ng-container matColumnDef="won">
+      <mat-header-cell *matHeaderCellDef mat-sort-header><span class="divider-y">  </span> Win </mat-header-cell>
+      <mat-cell  *matCellDef="let row"> 
+        <span class="divider-y">  </span>
+        <span class="green">{{row.won}} </span> 
+      </mat-cell>
+    </ng-container>
+    
+    <!-- Color Column
+      <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> L </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+      </ng-container> -->
+      <!-- Color Column -->
+      <ng-container matColumnDef="lost">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <span class="divider-y">  </span>  Loss</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <span class="divider-y"> |</span>
+          <span class="red">{{row.lost}} </span> 
+        </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="points">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <span class="divider-y">|</span> Points </mat-header-cell>
+        <mat-cell *matCellDef="let row" >
+          <span class="divider-y">|</span>
+          <span class="green">{{row.points}}</span>  
+        </mat-cell>
+      </ng-container>
+      
+      <!-- <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Pts </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+      </ng-container> -->
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+    <div class="content__paginator">
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </div>
+</div>
+

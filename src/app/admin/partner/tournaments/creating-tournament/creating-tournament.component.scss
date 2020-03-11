@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
+@font-face {
+    font-family: 'Druk';
+    src: url('/assets/fonts/Druk/DrukTextWide-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Druk-2';
+    src: url('/assets/fonts/Druk/DrukTextWide-Bold.woff') format('woff');
+}
+.add-library{
+    width:100%;
+    height: 350px;
+    background: #404040;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .mat-icon{
+        font-size: 200px;
+        width:200px;
+        height:200px;
+    }
+}
+
+.addform{
+    background: #41dd2c;
+    padding:10px;
+    border-radius:7px;
+    label{
+        display:block;
+        width:100%;
+        font-size: 14px;
+        color:#333;
+        font-weight: bold;
+        margin:10px 0px;
+    }
+    input, select{
+        border: none;
+        background:#fff;
+        padding: 8px 5px;
+        display: inline-block;
+        border-radius: 4px;
+        min-width: 200px;
+        &.w-2{
+            min-width: 250px;
+            
+        }
+        &.adress{
+            margin-left:15px;
+        }
+    }
+    .form-select-{
+        margin-left:15px;
+    }
+
+    input#name_tournament{
+        border: none;
+        background:#fff;
+        width: 100%;
+        display:block;
+    }
+}
+.form-group.addres{
+    // background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    input{
+        margin-bottom: 15px;
+        @media(min-width:720px){
+            width: 50%;
+            min-width: 50%;
+        }
+        @media(min-width:990px){
+            width:32.5%;
+            min-width:32.5%;
+        }
+        // @media(min-width:1280px){
+        //     min-width:23%;
+        //     width:24.5%;
+        // }
+    }
+}
+
+/* input color class */
+::ng-deep input.mat-input-element {
+    color: #333;
+  }
+  
+  /* Change label color on focused */
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #333 !important;
+  }
+    /* Change label color on focused */
+    ::ng-deep .mat-form-field .mat-form-field-label {
+        color: #333 !important;
+    }
+    /* underline border color on focused */
+    ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+        background-color: #333 !important;
+    }
+    .mat-form-field-suffix .mat-icon-button {
+        color: #333 !important;
+  }
+.--flex{
+    display: flex;
+    flex-direction: row;
+    & div:not(:first-of-type){
+        padding-left:15px;
+    }
+}
+.example-full-width{
+    input{
+        background-color: transparent;
+    }
+}
+
+.content--trophy{
+    display: flex;
+    margin-top: 45px;
+    .img-trophy{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .trophy{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        .form-group{
+            background-color: #404040;
+            border-radius: 4px;
+            padding: 20px 10px;
+            h4{
+                color: #41dd2c;
+                text-transform: uppercase;
+            }
+            select{
+                width: 80%;
+                padding:10px 15px ;
+                border-radius: 4px;
+
+            }
+        }
+        p{
+            width: 100%;
+            text-align: right;
+        }
+        h3{
+            font-family: "Druk";
+            font-size: 3em;
+            margin-left: 10px;
+        }
+    }
+}
+.btn-primary{
+    background-color: #41dd2c;
+    color: #333;
+    padding: 10px 15px;
+    display: inline-flex;
+    width: 220px;
+    text-align: center;
+    border:none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.form-group.--flex{
+    flex-wrap: wrap;
+    @media(min-width:1024px){
+        .form-group.--flex{
+            flex-wrap: nowrap;
+        }
+    }
+}

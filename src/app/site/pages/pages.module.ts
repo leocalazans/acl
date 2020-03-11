@@ -37,6 +37,13 @@ export const createTranslateLoader = (http:HttpClient) =>{
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }; 
 import { BannerPagesModule } from './../shared/banner-pages/banner-pages.module';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { TournamentsComponent } from './tournaments/tournaments.component';
+// import { NewsComponent } from './news/news.component';
+// import { SingleNewsComponent } from './news/single-news/single-news.component';
+// import { BannerNewsComponent } from './news/banner-news/banner-news.component';
+import { OwlModule } from 'ngx-owl-carousel';  
 
 @NgModule({
   declarations: [
@@ -47,6 +54,12 @@ import { BannerPagesModule } from './../shared/banner-pages/banner-pages.module'
     BannerHomeComponent,
     TableResultComponent,
     AboutUsComponent,
+    ComingSoonComponent,
+    NotFoundComponent,
+    TournamentsComponent,
+    // NewsComponent,
+    // SingleNewsComponent,
+    // BannerNewsComponent,
     // BannerPagesComponent
   ],
   // exports:[BannerPagesComponent],
@@ -68,6 +81,7 @@ import { BannerPagesModule } from './../shared/banner-pages/banner-pages.module'
     MatSortModule,
     MatTabsModule,
     MatPaginatorModule,
+    OwlModule ,
     TranslateModule.forRoot({
       loader:{
         provide: TranslateLoader,

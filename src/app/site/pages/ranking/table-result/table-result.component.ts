@@ -28,6 +28,7 @@ export class TableResultComponent implements OnInit {
   displayedColumns: string[] = ['Position', 'userName', 'won', 'lost','points'];
   dataSource:MatTableDataSource<UserData>;
   players: any;
+  banner: Object[];
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -38,6 +39,13 @@ export class TableResultComponent implements OnInit {
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(this.players);
+    this.banner = [
+      {
+        nome: 'World Ranking',
+        backgorund: './../../../../assets/images/bg-rank.jpg',
+        dead: 'Home',
+        dead_link: '/home'
+      }]
   }
 
   ngOnInit() {

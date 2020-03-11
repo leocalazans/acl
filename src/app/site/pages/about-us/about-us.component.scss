@@ -74,12 +74,13 @@ ol li{
         margin-left: -1em;
     }
 }
-.bg_light{
-    background-color: rgb(240, 240, 240);;
-}
+// .bg_light{
+//     background-color: rgb(240, 240, 240);;
+// }
 .table-section{ 
     padding: 45px 0;
-    background-color: #04df26;
+    // background-color: #04df26;
+    background: linear-gradient(180deg, rgba(4,223,38,1) 60%, rgba(0,212,255,0) 60%);
     .content-title{
         width: 100%;
     }
@@ -88,6 +89,7 @@ ol li{
     }
 
 }
+
 #tabAbout{
     width: 100%;
     .tabs{
@@ -155,6 +157,106 @@ ol li{
         }
     }
 }
+
+
+.cotnent_slider-tab{
+    $height: 500px;
+
+    background-color: #fff;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    height: $height;
+    .content_img{
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:$height;
+        background-color: #fff;
+        overflow-x: auto;
+        overflow-x: hidden;
+        img{
+            width: auto;
+            min-width: 100%;
+            height: 100%;
+        }
+    }
+    .content_nav{
+        width: 30%;
+        width: 30%;
+        min-width:350px;
+        max-width:350px;
+        height:$height;
+        background-color: #4b4b4b;
+        padding: 15px 20px;
+        position: relative;
+        img.logo{
+            display: block;
+            max-width: 50%;
+            margin: 10px auto;
+            margin-top: 40px;
+            
+        }
+        &::after{
+            content: " ";
+            display: block;
+            height: 0px;
+            width: 0px;
+            border-bottom: 0px solid #4b4b4b;
+            border-top: 50px solid #4b4b4b;
+            border-right: 175px solid transparent;
+            border-left: 175px solid transparent;
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+        }
+        h5{
+            color: #04df26;
+            font-size: 2em;
+            text-transform: uppercase;
+            font-family: "Russo one";
+            text-align: center;
+        }
+        .thumbs{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            // display: grid;
+            // grid-template-columns: 1fr 1fr;
+            max-width: 90%;
+            margin: 0 auto;
+            // div{
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            //     background-color: red;
+            //     box-sizing: border-box;
+            //     margin:5px;
+            //     overflow: auto;
+            //     overflow: hidden;
+            // }
+            img{
+                width: 50%;
+                // min-height: 110%;
+                // margin-top: 15px;
+                // max-height: 100px;
+                // max-width: 100px;
+                border:5px solid #4b4b4b;
+                box-sizing: border-box;
+                cursor: pointer;
+                background-color: #fff;
+                transition: all 0.3s ease-out;
+                &:hover{
+                    background-color: rgba(255, 255, 255, 0.5);
+                }
+
+            }
+        }
+    }
+}
+
 .content__expand{
     padding: 45px 0px;
 

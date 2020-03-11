@@ -11,12 +11,13 @@ import { Router } from '@angular/router';
 
 export class AuthenticationService {
   userData: Observable<firebase.User>;
-
+  logged: boolean = false;
   constructor(
     private angularFireAuth: AngularFireAuth,
     private router:Router
     ) {
     this.userData = angularFireAuth.authState;
+    console.log(this.router.url);
   }
 
   /* Sign up */
@@ -28,6 +29,9 @@ export class AuthenticationService {
       .then(res => {
         console.log('Successfully signed up!', res);
         // this.router.navigate(['/dashboard']);
+        sessionStorage.setItem('userMail', email);
+        // sessionStorage.setItem('userName', res.fullName);
+
         return res;
 
       })
@@ -36,6 +40,8 @@ export class AuthenticationService {
         console.log('Something is wrong:', error.message);
         return error.message;
       }); 
+      this.logged = true;
+
       return 'teste';   
   }
 
@@ -46,10 +52,16 @@ export class AuthenticationService {
       .signInWithEmailAndPassword(email, password)
       .then(res => {
         console.log('Successfully signed in!');
+        sessionStorage.setItem('userMail', email);
+        console.log(res);
+        // (user.displayName.length) ? sessionStorage.setItem('userName', user.displayName): null;
       })
       .catch(err => {
         console.log('Something is wrong:',err.message);
+        sessionStorage.setItem("erroLogin",err.message );
+        return 0;
       });
+      this.logged = true;
   }
 
   /* Sign out */
@@ -57,14 +69,21 @@ export class AuthenticationService {
     this.angularFireAuth
       .auth
       .signOut();
-    this.router.navigate(['/']);
+      localStorage.clear();
+      sessionStorage.clear();
+      this.router.navigate(['/']);
+      this.logged = false;
 
   }  
 
   GoogleAuth() {
+    this.logged = true;
+
     return this.AuthLogin(new auth.GoogleAuthProvider());
   }
   FacebookAuth() {
+    this.logged = true;
+
     return this.AuthLogin(new auth.FacebookAuthProvider());
   }
 
@@ -73,11 +92,13 @@ export class AuthenticationService {
     .then((result) => {
         var user = result.user;
         console.log('You have been successfully logged in!');
+        this.logged = true;
+        console.log(user);
         (user.email.length) ? sessionStorage.setItem('userMail', user.email): null;
+        (user.displayName.length) ? sessionStorage.setItem('userName', user.displayName): null;
 
     }).catch((error) => {
         console.log(error);
-
     })
   }
 

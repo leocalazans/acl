@@ -13,11 +13,15 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 export class MenuSiteComponent  {
   nativeElement : string;
   enteredButton = false;
+  haslogged: boolean = false;
   isMatMenuOpen = false;
   isMatMenu2Open = false;
   prevButtonTrigger;
   button = true;
-  constructor(private ren: Renderer2){}
+  constructor(private ren: Renderer2,
+    private authenticationService: AuthenticationService,
+
+    ){}
 
   menuenter() {
     this.isMatMenuOpen = true;
@@ -115,7 +119,6 @@ export class MenuSiteComponent  {
   ngOnInit() {
    let test =  window.innerWidth;
    //  document.readyState === "complete"
-   
    window.onload = () => {
     let wrap_drawer = document.querySelector('.js_drawer');
     // let menu_drawer = document.querySelector('#menuBtn');
@@ -126,6 +129,13 @@ export class MenuSiteComponent  {
     // let hideEl = el => el.remove();
     // (test <= 425) ? hideEl(menuDesk) :null ;
     };
+    if (sessionStorage.getItem('userMail')) {
+      this.haslogged = true;
+
+    } else {
+      this.haslogged = false;
+    }
+    
   }
 
 }

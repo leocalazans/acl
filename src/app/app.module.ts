@@ -32,16 +32,18 @@ import { SiteModule } from './site/site.module';
 import { AuthenticationService } from '../shared/authentication.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
+// import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminModule } from './admin/admin.module';
 import { PartnershipComponent } from './pages/partnership/partnership.component';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    // DashboardComponent,
     PartnershipComponent,
+    ComingSoonComponent,
    
   ],
   imports: [
