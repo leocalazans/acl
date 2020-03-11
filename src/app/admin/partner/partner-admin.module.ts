@@ -18,6 +18,10 @@ import { MatInputModule} from '@angular/material/input';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { PartnerComponent } from './partner.component'; 
+import { AgmCoreModule } from '@agm/core';
+import { MatCheckboxModule} from '@angular/material/checkbox';
+import { AdminComponent } from '../admin.component';
+import { AdminModule } from '../admin.module';
 
 @NgModule({
   declarations: [
@@ -34,11 +38,17 @@ import { PartnerComponent } from './partner.component';
     MatCardModule,
     MatSidenavModule,
     MatIconModule,
+    MatCheckboxModule,
     MatListModule,
         FormsModule, 
     ReactiveFormsModule,
     MatDatepickerModule,
     MatInputModule,
+    AdminModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyBzFmg5XDNvt6deMUPTbsjG1U6iLh_5zs4",
+      libraries: ["places"]
+    }),
     AdminRoutingModule
   ]
 })

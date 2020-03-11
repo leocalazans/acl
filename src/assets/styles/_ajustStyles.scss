@@ -24,6 +24,14 @@
 .mat-drawer-inner-container {
     padding-top: 20px;
 }
+.content__dashboard{
+    max-width: 98%;
+}
+.dash-content{
+    width: 90%;
+    // width: 50%;
+    padding-left: 25%;
+}
 @media(min-width:990px){
     .mat-button.btnMenu{
         display: none;

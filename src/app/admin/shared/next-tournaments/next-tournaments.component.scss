@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Druk';
+    src: url('/assets/fonts/Druk/DrukTextWide-Bold.woff') format('woff');
+}
+.content__card-tournaments{
+    display: flex;
+    .card-tournaments{
+        width: 33%;
+        min-height: 250px;
+        height: auto;
+        background-color: #44da2b;
+        margin: 0px 10px;
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        padding:5px 10px;
+    }
+    .card-content{
+        img{
+            width:100%;
+            height: auto;
+        }
+    }
+    .card-header{
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        span.icon{
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        h4{
+            display: inline-block;
+            font-family: "Druk";
+            // text-align: center;
+            color: #fff;
+            font-size: 1.4em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+        }
+    }
+    .card-footer{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        a{
+            width: 50%;
+            color: #fff;
+            padding: 10px 5px;
+            background: #434044;
+            border-radius: 7px;
+            text-align: center;
+            font-family: "Druk";
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                background: #8b898b;
+            }
+            &:nth-child(2){
+                margin-left: 5px;
+            }
+        }
+    }
+}

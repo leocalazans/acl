@@ -54,10 +54,12 @@ export class AuthenticationService {
       .signInWithEmailAndPassword(email, password)
       .then(res => {
         console.log('Successfully signed in!');
+        sessionStorage.setItem('userMail', email);
       })
       .catch(err => {
         console.log('Something is wrong:',err.message);
       });
+
   }
 
   /* Sign out */
@@ -65,6 +67,7 @@ export class AuthenticationService {
     this.angularFireAuth
       .auth
       .signOut();
+      sessionStorage.clear;
     this.router.navigate(['/']);
 
   }  
@@ -85,7 +88,6 @@ export class AuthenticationService {
         var user = result.user;
         console.log('You have been successfully logged in!');
         (user.email.length) ? sessionStorage.setItem('userMail', user.email): null;
-        (user.email.length) ? localStorage.setItem('userMail', user.email): null;
 
     }).catch((error) => {
         console.log(error);

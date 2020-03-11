@@ -1,22 +1,24 @@
+
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Tournament } from './tournament';
+import { Usersite } from './usersite';
+ 
 @Injectable({
   providedIn: 'root'
 })
-export class CreateTournamentService {
-
-  private dbPath = '/championships';
+export class dashboardService {
  
-  customersRef: AngularFirestoreCollection<Tournament> = null;
+  private dbPath = '/users';
+ 
+  customersRef: AngularFirestoreCollection<Usersite> = null;
  
   constructor(private db: AngularFirestore) {
     this.customersRef = db.collection(this.dbPath);
   }
  
-  createCustomer(Tournament: Tournament): void {
-    this.customersRef.add({...Tournament});
-  }
+  // createCustomer(Usersite: Usersite): void {
+  //   this.customersRef.add({...Usersite});
+  // }
  
   updateCustomer(key: string, value: any): Promise<void> {
     return this.customersRef.doc(key).update(value);
@@ -26,8 +28,10 @@ export class CreateTournamentService {
     return this.customersRef.doc(key).delete();
   }
  
-  getCustomersList(): AngularFirestoreCollection<Tournament> {
+  getCustomersList(): AngularFirestoreCollection<Usersite> {
     return this.customersRef;
   }
-
+  getCustomer(key: string){
+    return this.customersRef.doc(key);
+  }
 }

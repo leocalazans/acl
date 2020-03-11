@@ -81,7 +81,7 @@ export class LoginSiteComponent {
 
   signIn() {
     
-    const singIn = this.authenticationService.SignIn(this.email, this.password);
+    this.authenticationService.SignIn(this.email, this.password);
 
     console.log(this.errorlogin["errorMessage"]); 
     // sessionStorage("erroLogin");

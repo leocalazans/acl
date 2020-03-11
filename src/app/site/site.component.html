@@ -14,7 +14,7 @@
     }
   </style>
   
-  <mat-drawer-container class="content-container " *ngIf="!(authenticationService.userData | async)" >
+  <mat-drawer-container class="content-container " *ngIf="!(showDash)" >
     <mat-drawer #drawer class="js_drawer content-sidenav" mode="side">
       <button class="btnMenu" mat-button (click)="drawer.toggle()">
         <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>
@@ -136,7 +136,7 @@
   
       <mat-list (click)="drawer.toggle()" class="lisTmenu">
         <mat-list-item  *ngIf="!(authenticationService.userData | async)" > <a mat-raised-button routerLink="/login"	routerLinkActive="active">Login</a></mat-list-item>
-        <mat-list-item  *ngIf="(authenticationService.userData | async)" > <a mat-raised-button routerLink="/dashboard"	routerLinkActive="active">dashboard</a></mat-list-item>
+        <mat-list-item  *ngIf="(authenticationService.userData | async)" > <a mat-raised-button routerLink="/mysoccer"	routerLinkActive="active">dashboard</a></mat-list-item>
         <mat-list-item> <a routerLink="/about" routerLinkActive="active" mat-button>{{ "What's Air Soccer?" | translate }}</a></mat-list-item>
         <mat-list-item> <a mat-button>Salt</a></mat-list-item>
         <mat-list-item> <a mat-button>Paprika</a></mat-list-item>
@@ -159,7 +159,7 @@
     <app-nav-footer></app-nav-footer>
   </mat-drawer-container>
 
-  <div *ngIf="authenticationService.userData | async" class="content__dashboard" [hidden]="submitted">
+  <!-- <div *ngIf="showDash" class="content__dashboard" [hidden]="submitted">
     <div class="navSite">
       <aside>
         <ul class="list_aside" >
@@ -178,7 +178,7 @@
               </div> 
             </a>
           </li>
-          <li class="dashList"><a href="#"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> Home</a></li>
+          <li class="dashList"><a href="#"><mat-icon aria-hidden="false" aria-label=""> </mat-icon> Home</a></li>
           <li class="dashList"><a   routerLink="mysoccer/tournamets"><mat-icon aria-hidden="false" aria-label="Example home icon">emoji_events</mat-icon>  Tournaments</a></li>
         </ul>
         <button class="btn_aside" (click)="signOut()" *ngIf="authenticationService.userData | async">{{"Logout" | translate}}</button>
@@ -187,5 +187,6 @@
     </div>  
     <div class="dash-content">
         <router-outlet ></router-outlet>
-    </div>    
-</div>
+      </div>    
+    </div> -->
+    <router-outlet *ngIf="showDash" ></router-outlet>

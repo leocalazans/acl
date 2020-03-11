@@ -2,6 +2,7 @@
     background: #fafafa;
     overflow-x: hidden;
 }
+
 @media(min-width:1250px){
     .main__site{
         position: relative;
@@ -10,6 +11,7 @@
         box-shadow: 0px 7px 8px -2px rgba(0,0,0,0.75);
 
     }
+
 }
 
 .default-container{
@@ -63,27 +65,69 @@ h4{
     border: solid 1px rgba(144, 144, 144, 1);
 }
 .content__dashboard{
-    max-width: 100vw;
     min-width: 100%;
-    max-height: 100vh;
-    min-height: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     margin-top: -15px;
     display: flex;
+    position: relative;
+
 }
 .navSite{
+    position: fixed;
     width: 20%;
     max-width: 280px;
-    height: 100%;
+    height: 100vh;
     background: #eeeeee;
     padding: 20px 25px;
     padding: 20px 35px;
-    position: relative;
-    border-top: solid 10px  rgba(0, 0, 0, 0.7);
-    top:16px;
+    // border-top: solid 10px  rgba(0, 0, 0, 0.7);
+    top:0px;
     border-top-right-radius: 7px;
     box-shadow: 5px 7px 11px 1px rgba(0, 0, 0, 0.18);
+    z-index: 22;
+    // background-image: url(https://airsoccerleague.com/comming_bg.38def830a193254c878b.webp);
+    // background-position: -368px -9px;
+    // background-size: auto 100%;
+    &:before{
+        content:"";
+        width: 100%;
+        height: 120px;
+        position: absolute;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.8);
+        left: 0px;
+        top: -1px;
+        z-index: 1;
 
+    }
+    // &:after{
+    //     content:"";
+    //     width: 100%;
+    //     height: 1px;
+    //     position: absolute;
+    //     display: block;
+    //     background-color: rgba(245, 245 , 245, 0.3);
+    //     left: 0px;
+    //     top: 0px;
+    //     margin-top: 25px;
+    // }
+    &:after{
+        content:"";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: block;
+        // background-image: url(https://airsoccerleague.com/comming_bg.38def830a193254c878b.webp);
+        background-position: -368px -9px;
+        background-size: auto 100%;
+        opacity: 0.2;
+        left: 0px;
+        top: 0px;
+        // margin-top: 25px;
+        z-index: -1;
+
+    }
     a{
         color: #5e5d5df6;
        
@@ -93,6 +137,22 @@ h4{
         li{
             list-style: none;
             padding: 4px 0px;
+            &:hover:not(:first-of-type){
+                position: relative;
+                font-weight: 500;
+                &:after{
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    background-color: #41dd2c;
+                    display: block;
+                    position: absolute;
+                    margin-top: 5px;
+                }
+                & .mat-icon{
+                    color: #41dd2c;
+                }
+            }
             &.dashList{
                 a{
                     text-decoration: none;
@@ -114,6 +174,8 @@ h4{
         // padding: 45px 0;
         // border-bottom: 0.5px solid rgba(0, 0, 0, 0.3); 
         padding-bottom: 30px;
+        position: relative;
+        z-index: 33;
         // &:after{
         //     content:"";
         //     width: 100%;
@@ -124,19 +186,12 @@ h4{
         //     left: 0px;
         //     margin-top: 15px;
         // }
-        &:after{
-            content:"";
-            width: 100%;
-            height: 1px;
-            position: absolute;
-            display: block;
-            background-color: rgba(0, 0, 0, 0.3);
-            left: 0px;
-            margin-top: 25px;
-        }
+
+
         a{
             display: flex;
             text-decoration: none;
+            color: #fff;
         }
         .content-img {
             width: 25%;
@@ -162,6 +217,7 @@ h4{
             }
             p{
                 margin: 0px;
+                color: #41dd2c;
             }
         }
     }
@@ -169,11 +225,13 @@ h4{
 }
 
 .dash-content{
-    width: 80%;
+    width: 90%;
     height: 100%;
     background: #fff;
     padding: 5px 20px; 
     padding-top: 45px;
+    padding-left: 5%;
+    padding-left: calc(280px + 10%);
 }
 
 .btn_aside{
@@ -188,7 +246,4 @@ h4{
     &:hover{
             background-color: #8bff7c;
     }
-}
-.list_aside{
-
 }

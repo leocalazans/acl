@@ -178,12 +178,20 @@
         <div class="default-container">
             
             <div class="content_register">
-                <a routerLink="../register" routerLinkActive="active">Register</a>
-                <div class="divider"></div>
-                <div class="login_content_btn" routerLink="../login"	routerLinkActive="active">
+                <a routerLink="../register" *ngIf="!haslogged" routerLinkActive="active">Register</a>
+
+                <div class="divider" *ngIf="!haslogged"></div>
+
+                <div class="login_content_btn" *ngIf="!haslogged" routerLink="../login"	routerLinkActive="active">
                     <mat-icon aria-hidden="false" aria-label="Example home icon" class='material_menu_icon'>account_box</mat-icon>
                     <button mat-button >{{"enter" | translate}}</button>
                 </div>
+
+                <a class="login_content_btn" *ngIf="haslogged" href="./mysoccer/partner/" 	routerLinkActive="active">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" class='material_menu_icon'>account_box</mat-icon>
+                    <!-- <button mat-button >{{"enter" | translate}}</button> -->
+                    <button mat-button >User Area</button>
+                </a>
             </div>
         </div>
     </div>

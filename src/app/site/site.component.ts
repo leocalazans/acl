@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';  
 import { AuthenticationService } from './../../shared/authentication.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-site',
@@ -10,9 +11,10 @@ import { AuthenticationService } from './../../shared/authentication.service';
 export class SiteComponent {
 
   // title = 'ASL';
-
+  showDash : boolean = false;
   constructor(  
     public authenticationService: AuthenticationService,
+    private location: Location,
     public translate: TranslateService) {  
     translate.addLangs(['en_US', 'pt_BR']);  
     if (localStorage.getItem('locale')) {  
@@ -35,9 +37,17 @@ export class SiteComponent {
 
   signOut() {
     this.authenticationService.SignOut();
+    window.location.href="/";
+
+
   }
 
   ngOnInit() {
-
+    console.log(this.location.path());
+    if (window.location.href.indexOf("mysoccer") > -1 && this.authenticationService.userData ) {
+      this.showDash = true;
+    }else{
+      this.showDash = false;
+    }
   }
 }

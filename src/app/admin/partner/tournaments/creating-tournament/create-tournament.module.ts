@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// MatDatepickerInputEvent
+import { TrophyComponent } from './trophy/trophy.component';
+// import { AdminComponent } from '../../../admin.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [TrophyComponent],
+  
   imports: [
-    CommonModule
+    CommonModule,
+    // AdminComponent
+
   ]
 })
 export class CreateTournamentModule { }
