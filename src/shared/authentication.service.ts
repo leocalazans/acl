@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 
 export class AuthenticationService {
+  authState: any = null;
+
   userData: Observable<firebase.User>;
   logged: boolean = false;
   constructor(
@@ -21,7 +23,7 @@ export class AuthenticationService {
   }
 
   /* Sign up */
-  SignUp(email: string, password: string) {
+  SignUp(email: string, password: string, name: string) {
     sessionStorage.removeItem('SingUpError');
     this.angularFireAuth
       .auth
@@ -31,8 +33,9 @@ export class AuthenticationService {
         // this.router.navigate(['/dashboard']);
         sessionStorage.setItem('userMail', email);
         // sessionStorage.setItem('userName', res.fullName);
-
+        this.authState = res;
         return res;
+       
 
       })
       .catch(error => {
@@ -41,9 +44,9 @@ export class AuthenticationService {
         return error.message;
       }); 
       this.logged = true;
-
-      return 'teste';   
+  
   }
+
 
   /* Sign in */
   SignIn(email: string, password: string) {
