@@ -12,6 +12,8 @@ import { Usersite } from '../usersite';
 })
 
 export class AuthenticationService {
+  authState: any = null;
+
   userData: Observable<firebase.User>;
     usersite: Usersite = new Usersite();
 
@@ -36,6 +38,7 @@ export class AuthenticationService {
       .then(res => {
         // console.log('Successfully signed up!', res);
         sessionStorage.setItem('SingUpSucess', email);
+        
         return res;
 
       })
@@ -44,9 +47,16 @@ export class AuthenticationService {
         console.log('Something is wrong:', error.message);
         return error.message;
       }); 
+      
       return 0;   
   }
 
+  updateUser(name){
+    this.angularFireAuth.auth.currentUser.updateProfile({
+        displayName: name,
+         photoURL: "https://example.com/jane-q-user/profile.jpg"
+    });
+  }
   /* Sign in */
   SignIn(email: string, password: string) {
     this.angularFireAuth

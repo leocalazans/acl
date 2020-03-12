@@ -96,11 +96,7 @@ import { CustomerDetailsComponent } from './customers/customer-details/customer-
 import { CustomersListComponent } from './customers/customers-list/customers-list.component';
 import { CreateCustomerComponent } from './customers/create-customer/create-customer.component';
 // import { DashboardComponent } from './admin/dashboard/dashboard.component';
-
-// import table results 
-
-
-// forms
+import { ControlService } from './shared/control/control.service'
 
 // translate
 import { TranslateModule, TranslateLoader} from "@ngx-translate/core";
@@ -220,7 +216,7 @@ export const createTranslateLoader = (http:HttpClient) =>{
     MatTableModule,
     SiteComponent,
   ],
-  providers: [AuthenticationService, { provide: FirestoreSettingsToken, useValue: {}}],
+  providers: [AuthenticationService, { provide: FirestoreSettingsToken, useValue: {}}, ControlService],
   bootstrap: [AppComponent]
 })
 export class SiteModule { }

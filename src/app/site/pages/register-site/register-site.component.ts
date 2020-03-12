@@ -12,6 +12,7 @@ import { Location} from '@angular/common';
 })
 export class RegisterSiteComponent implements OnInit {
   
+  displayName: string;
   email: string;
   password: string;
   
@@ -35,7 +36,7 @@ export class RegisterSiteComponent implements OnInit {
     }
     
     signUp() {
-      this.authenticationService.SignUp(this.email, this.password);
+      this.authenticationService.SignUp(this.email, this.password, this.usersite.fullName );
       this.submitted = true;
       this.save();
       

@@ -126,19 +126,23 @@ export class PlayersRegisterComponent implements OnInit {
     //   this.email = ''; 
     //   this.password = '';
     // }
+
     signUp() {
-      this.authenticationService.SignUp(this.email, this.password);
+      // this.authenticationService.SignUp(this.email, this.password);
+      this.authenticationService.SignUp(this.email, this.password );
         let HasSingUp = setInterval(() => {
           if (sessionStorage.getItem('SingUpError')) {
             this.error = sessionStorage.getItem('SingUpError');
             clearInterval(HasSingUp);
           }
           if (sessionStorage.getItem('SingUpSucess')) {
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/mysoccer/player/']);
             this.save();
             clearInterval(HasSingUp);
           }
         }, 50);
+        this.authenticationService.updateUser( this.usersite.fullName);
+
     }
     // favoriteSeason: string;
     seasons: string[] = ['Female', 'Male'];

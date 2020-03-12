@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';  
 import { AuthenticationService } from './../../shared/authentication.service';
 import { Location } from '@angular/common';
-
+import { ControlService } from './shared/control/control.service'
 @Component({
   selector: 'app-site',
   templateUrl: './site.component.html',
@@ -11,10 +11,12 @@ import { Location } from '@angular/common';
 export class SiteComponent {
 
   // title = 'ASL';
-  showDash : boolean = false;
+  showDash : boolean;
+
   constructor(  
     public authenticationService: AuthenticationService,
     private location: Location,
+    private controlService:ControlService,
     public translate: TranslateService) {  
     translate.addLangs(['en_US', 'pt_BR']);  
     if (localStorage.getItem('locale')) {  
@@ -29,6 +31,7 @@ export class SiteComponent {
       translate.setDefaultLang(userLang);  
     }  
   }  
+
   changeLang(language: string) {  
     
     localStorage.setItem('locale', language);  
@@ -44,10 +47,18 @@ export class SiteComponent {
 
   ngOnInit() {
     console.log(this.location.path());
-    if (window.location.href.indexOf("mysoccer") > -1 && this.authenticationService.userData ) {
-      this.showDash = true;
-    }else{
-      this.showDash = false;
+    
+    
+    if ( this.authenticationService.userData ) {
+      // this.showDash = true;
+      this.controlService.castdash.subscribe(hasdash => this.showDash = hasdash);
+      alert(this.showDash);
+
     }
+    // if (window.location.href.indexOf("mysoccer") > -1 && this.authenticationService.userData ) {
+    //   // this.showDash = true;
+    //   alert(this.showDash);
+
+    // }
   }
 }

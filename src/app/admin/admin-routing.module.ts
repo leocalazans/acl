@@ -22,7 +22,7 @@ const routes: Routes = [
     loadChildren: ()=> import('./player/player-module/player-module.module').then(c => c.PlayerModuleModule)
   },
   { 
-    path: 'judge',    
+    path: 'referee',    
     loadChildren: ()=> import('./judge/judge-module/judge-module.module').then(c => c.JudgeModuleModule)
   },
 
