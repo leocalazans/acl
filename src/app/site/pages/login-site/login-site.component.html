@@ -29,10 +29,14 @@
         <mat-hint>{{"Forgot password?" | translate}}</mat-hint>
         
       </div>
-      
       <br>
       <div class="login-content__form flex-dist">
-        <button mat-flat-button  (click)="signIn()" [routerLink]="['/', {  outlets: { adm: ['dashboard'] } }]" color="primary">GET STARTED !</button>
+        <mat-error *ngIf="errorlogin.hasHerror">{{errorlogin.errorMessage}}</mat-error>
+      </div>
+      <br *ngIf="errorlogin.hasHerror">
+      
+      <div class="login-content__form flex-dist">
+        <button mat-flat-button  (click)="signIn()"  color="primary">GET STARTED !</button>
       </div>
       <div class="login-content__form flex-dist left">
         <a mat-button class="btn-google  btn-f"  [routerLink]="['/', {  outlets: { adm: ['dashboard'] } }]"  routerLinkActive="active" (click)="authenticationService.GoogleAuth()">

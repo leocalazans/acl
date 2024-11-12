@@ -1,0 +1,111 @@
+<div  class="content__dashboard" >
+    <app-admin></app-admin>
+    <div class="dash-content">
+        
+        <div>
+            <h3>CREATE NEW TOURNAMENT</h3>
+            <div class="add-library"> 
+                
+                <mat-icon aria-hidden="false" aria-label="Example home icon">library_add</mat-icon>
+                <strong>IMPORTANT</strong>
+                After the creation of the tournaments, the official graphic material will be sent by the ASL marketing team.   
+            </div>
+            
+            <h3>INSERT INFORMATION</h3>
+            
+            <div class="addform">
+                <div class="form-group">
+                    <label for="my-input">TOURNAMENT NAME</label>
+                    
+                    <input id="name_tournament" name="tournament" placeholder="Name" class="form-control" type="text" [(ngModel)]="tournament.championshipName" >
+                </div>  
+                <div class="form-group">
+                    <label for="">LOCAL</label>
+                    
+                    <input id="searchLocation" value="search for location" placeholder="search for location" autocorrect="on" autocapitalize="off" spellcheck="off" type="text" class=" w-2 form-control" #search (change)="loadPlacesAutocomplete()" [formControl]="searchControl">
+                </div>  
+                <br>
+                
+                <div class="form-group addres">
+                    <input class="field w-2" id="locality" [(ngModel)]="addressTournament.locality"  value="" placeholder="City"/>
+                    <input class="field w-2" id="country" [(ngModel)]="addressTournament.country"  disabled="true"/>
+                    <input class="field w-2" [(ngModel)]="addressTournament.administrative_area_level_1"  disabled="true"/>
+                    <input class="field w-2" [(ngModel)]="addressTournament.administrative_area_level_2"  disabled="true" placeholder="aqui"/>
+                    <input class="field w-2" [(ngModel)]="addressTournament.street_number" id="street_number" disabled="true"/>
+                    <input class=" form-control w-2" type="text" [(ngModel)]="addressTournament.postal_code" placeholder="Zipcode">
+                </div>
+                
+                <div class="form-group">
+                    <label for="">DATE OF EVENT</label>
+                    <mat-form-field class="example-full-width ">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker"  (dateChange)="addEvent('change', $event)">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>  
+                
+                <div class="form-group --flex">
+                    <div>
+                        <label for="">MODE</label>
+                        <select (selectionChange)="saveMode($event)" class="form-select">
+                            <option *ngFor="let mode of modes" [value]="mode.value" >{{mode.viewValue}}</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">MAX. PLAYERS</label>
+                        <select (change)="savePlayer($event)" class="form-select">
+                            <option *ngFor="let player of players" [value]="player.value">{{player.viewValue}}</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">N'TABLES</label>
+                        <select (selectionChange)="saveTables($event)"class="form-select">
+                            <option *ngFor="let table of tables" [value]="table.value">{{table.viewValue}}</option>
+                        </select>
+                    </div>
+                    <!-- <div>
+                        <label for="">SET</label>
+                        <select (selectionChange)="saveMaxSets($event)" class="form-select">
+                            <option *ngFor="let set of sets" [value]="set.value">{{set.viewValue}}</option>
+                            
+                        </select>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="content--trophy">
+            <div class="img-trophy">
+                <img src="../../../../assets/images/adm/trofeu.png" alt="">
+            </div>
+            
+            <div class="trophy">
+                <h3>
+                    Trophy
+                </h3>
+                
+                <div class="form-group">
+                    <h4>
+                        MODEL OF TROPHY
+                    </h4>
+                    <select name="" id="">
+                        <option value="Trophy">Trophy</option>
+                        <option value="">Trophy</option>
+                        <option value="">Trophy</option>
+                    </select>
+                </div>
+                <p>
+                    I have read and agree to the terms of the tournaments
+                    <mat-checkbox></mat-checkbox>
+                    
+                </p>
+                <p>
+                    <button class="btn-primary" (click)="save()" type="button">Creating New Tournament</button>
+                </p>
+                
+            </div>
+        </div>  
+    </div>  
+</div>  

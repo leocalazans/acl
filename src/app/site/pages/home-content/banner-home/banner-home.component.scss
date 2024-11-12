@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
-
+@font-face {
+    font-family: 'Druk';
+    src: url('/assets/fonts/Druk/DrukTextWide-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Druk-2';
+    src: url('./DrukTextWide-Bold.woff') format('woff');
+}
 
 @keyframes sliderBg {
     0% {
@@ -104,7 +111,8 @@
     }
     h1{
         position: relative;
-        font-family: 'Russo', sans-serif;
+        // font-family: 'Russo', sans-serif;
+        font-family: 'Druk', sans-serif;
         font-size: 3em;
         line-height: 0.8em;
         animation: slideLeft 1.7s 1;
@@ -215,7 +223,7 @@
     .right__content{
         width: 60%;
         h1{
-            font-family: 'Russo', sans-serif;
+            font-family: 'Druk', sans-serif;
             font-size: 3.6em;
             line-height: 0.8em;
             text-align: left;

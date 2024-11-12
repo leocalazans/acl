@@ -1,0 +1,26 @@
+<div class="navSite">
+    <aside>
+      <ul class="list_aside" >
+        <li class="content-perfil">
+          <a  routerLink="/mysoccer/profile">
+            <div class="content-img">
+              <img src="https://via.placeholder.com/50" alt="">
+            </div>
+            <div class="named-perfil">
+              <h2>
+                  {{ (authenticationService.userData | async)?.displayName }}
+              </h2>
+              <p>
+                lorem ipsum
+              </p>
+            </div> 
+          </a>
+        </li>
+        <li class="dashList"><a routerLink="/partner/"><mat-icon aria-hidden="false" aria-label=""> </mat-icon> Home</a></li>
+        <li class="dashList"><a   routerLink="/partner/creating"><mat-icon aria-hidden="false" aria-label="Example home icon">emoji_events</mat-icon>creating  Tournaments</a></li>
+        <li class="dashList"><a   routerLink="/partner/tournamets"><mat-icon aria-hidden="false" aria-label="Example home icon">emoji_events</mat-icon>  Tournaments</a></li>
+      </ul>
+      <!-- <button class="btn_aside" (click)="signOut()" *ngIf="authenticationService.userData | async">{{"Logout" | translate}}</button> -->
+
+    </aside>
+  </div> 

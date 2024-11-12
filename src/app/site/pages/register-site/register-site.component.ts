@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../../../shared/authentication.service';
 import { RegisterService } from './users/user/user.service';
 import { Usersite } from './users/user/usersite';
-import {TranslateService} from '@ngx-translate/core';
-import {Location} from '@angular/common';
+import { TranslateService} from '@ngx-translate/core';
+import { Location} from '@angular/common';
 
 @Component({
   selector: 'app-register-site',
@@ -12,6 +12,7 @@ import {Location} from '@angular/common';
 })
 export class RegisterSiteComponent implements OnInit {
   
+  displayName: string;
   email: string;
   password: string;
   
@@ -35,7 +36,7 @@ export class RegisterSiteComponent implements OnInit {
     }
     
     signUp() {
-      this.authenticationService.SignUp(this.email, this.password);
+      this.authenticationService.SignUp(this.email, this.password, this.usersite.fullName );
       this.submitted = true;
       this.save();
       

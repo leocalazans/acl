@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthenticationService} from './shared/authentication.service'
+import { AuthenticationService} from './shared/authentication.service'
 import { RegisterService } from './user.service';
 import { Usersite } from './usersite';
-import {TranslateService} from '@ngx-translate/core';
-import {FormBuilder,FormControl,FormGroup,FormGroupDirective, NgForm, Validators, } from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { TranslateService} from '@ngx-translate/core';
+import { FormBuilder,FormControl,FormGroup,FormGroupDirective, NgForm, Validators, } from '@angular/forms';
+import { ErrorStateMatcher} from '@angular/material/core';
 import { Router } from '@angular/router';
 
 
@@ -126,19 +126,23 @@ export class PlayersRegisterComponent implements OnInit {
     //   this.email = ''; 
     //   this.password = '';
     // }
+
     signUp() {
-      this.authenticationService.SignUp(this.email, this.password);
+      // this.authenticationService.SignUp(this.email, this.password);
+      this.authenticationService.SignUp(this.email, this.password );
         let HasSingUp = setInterval(() => {
           if (sessionStorage.getItem('SingUpError')) {
             this.error = sessionStorage.getItem('SingUpError');
             clearInterval(HasSingUp);
           }
           if (sessionStorage.getItem('SingUpSucess')) {
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/mysoccer/player/']);
             this.save();
             clearInterval(HasSingUp);
           }
         }, 50);
+        this.authenticationService.updateUser( this.usersite.fullName);
+
     }
     // favoriteSeason: string;
     seasons: string[] = ['Female', 'Male'];
